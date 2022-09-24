@@ -12,17 +12,43 @@
   <script>
       var data = {
           'A/4': {
-
+              title: '',
+              description: '',
+              lecturer: '',
+              maxNumber: 2,
+              helpers: ''
           }
       }
       $( document ).ready(function() {
-
+          console.log(location);
+          const urlParams = new URLSearchParams(location.search);
+          console.log(urlParams)
+          const path = location.pathname;
+          document.getElementById("title").innerText = data[path].title;
+          document.getElementById("description").innerText = data[path].description;
+          document.getElementById("lecturer").innerText = data[path].lecturer;
+          document.getElementById("maxNumber").innerText = data[path].maxNumber;
+          document.getElementById("helpers").innerText = data[path].helpers;
       });
   </script>
 </head>
 
 <body>
+<div id="content">
+  <h1 id="title"></h1>
+  <div id="description"></div>
+  <div id="lecturer"></div>
+  <div>
+    <span>Max létszám</span>
+    <span id="maxNumber"></span>
+  </div>
+  <div>
+    <span>Segítőlk</span>
+    <span id="helpers"></span>
+  </div>
 
+
+</div>
 </body>
 
 </html>
