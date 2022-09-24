@@ -2,11 +2,12 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
     <script src="./jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
     <script>
@@ -14,15 +15,14 @@
         var hdc;
         var element;
         var data = {
-            'A/4': '<div>\n    <span>Kezdés</span>\n    <span>befejezés</span>\n</div>\n<div>\n    <span>16:00</span>\n    <span>22:00</span>\n</div>',
-            'A/3': '<div><table>\n' +
+            'A/5':'<div><table>\n' +
                 '  <tr>\n' +
-                '    <th>Ásványkiállítás</th>\n' +
-                '    <th>A/3 épület III. emelet</th>\n' +
-                '    <th>17.00-22.00</th>\n' +
+                '    <th>Előadás</th>\n' +
+                '    <th>Helyszín</th>\n' +
+                '    <th>Időpont</th>\n' +
                 '  </tr>\n' +
                 '  <tr>\n' +
-                '    <td>Tanbánya  bemutató</td>\n' +
+                '    <td>Alfreds Futterkiste</td>\n' +
                 '    <td>Maria Anders</td>\n' +
                 '    <td>Germany</td>\n' +
                 '  </tr>\n' +
@@ -50,6 +50,150 @@
                 '    <td>Magazzini Alimentari Riuniti</td>\n' +
                 '    <td>Giovanni Rovelli</td>\n' +
                 '    <td>Italy</td>\n' +
+                '  </tr>\n' +
+                '</table>\n' +
+                '</div>',
+            'A/4': '<div>' +
+                '<table>\n' +
+                '  <tr>\n' +
+                '    <th>Előadás</th>\n' +
+                '    <th>Helyszín</th>\n' +
+                '    <th>Időpont</th>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Passzold vissza Tesó! - kutatói szemmel</td>\n' +
+                '    <td>A/4 főépület előcsarnok</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Az RM@Schools\n' +
+                'nyersanyag-nagykövetei</td>\n' +
+                '    <td>A/4 főépület előcsarnok</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Rezgéssebesség mérés</td>\n' +
+                '    <td>A/4 főépület előcsarnok</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Formáld a földfelszínét és elemezd azt</td>\n' +
+                '    <td>A4 épület alagsor, 017 terem</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Villanyautó - füstmentesen 4 keréken</td>\n' +
+                '    <td>A/4 főbejárat előtt</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>3D-s megjelenítés hagyományos és speciális eszközökkel</td>\n' +
+                '    <td>A4 épület III. emelet 321.</td>\n' +
+                '    <td>18.00-21.30 félóránként</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>FIN & FUN</td>\n' +
+                '    <td>A/4. épület III. emelet</td>\n' +
+                '    <td>18.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Mission (MÉG) Possible Kalandjáték! </td>\n' +
+                '    <td>A/4 épület, régi Aula</td>\n' +
+                '    <td>18.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>BEVÁLLAL(koz)ÓS Okospont</td>\n' +
+                '    <td>A/4 épület, régi Aula</td>\n' +
+                '    <td>18.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>KVÍZelitó</td>\n' +
+                '    <td>A/4 épület, régi Aula</td>\n' +
+                '    <td>18.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Kor(lát) nélkül, avagy fejlesszük együtt kompetenciáinkat!</td>\n' +
+                '    <td>A/4 épület, régi Aula</td>\n' +
+                '    <td>18.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>WONDER WORLD</td>\n' +
+                '    <td>A/4 épület, régi Aula</td>\n' +
+                '    <td>18.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Tutajjal át a másik partra</td>\n' +
+                '    <td>A/4 épület, régi Aula</td>\n' +
+                '    <td>18.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Térképes kvízjátékok</td>\n' +
+                '    <td>A/4 épület, régi Aula</td>\n' +
+                '    <td>18.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Légy Te is részese egy valódi marketing kísérletnek!</td>\n' +
+                '    <td>A/4 épület, régi Aula</td>\n' +
+                '    <td>18.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Utazás a "világunk" körül</td>\n' +
+                '    <td>A/4 épület, régi Aula</td>\n' +
+                '    <td>18.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Magyar Honvédség Radarállomás</td>\n' +
+                '    <td>A/4 épület I. emeleti galéria</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Magyar Honvédség Toborzóiroda</td>\n' +
+                '    <td>A/4 épület I. emeleti galéria</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Robert Bosch Power Tools Kft.</td>\n' +
+                '    <td>A/4 épület régi aula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '</table>' +
+                '</div>',
+
+            'A/3': '<div><table>\n' +
+                '  <tr>\n' +
+                '    <th>Előadás</th>\n' +
+                '    <th>Helyszín</th>\n' +
+                '    <th>Időpont</th>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Ásványkiállítás</td>\n' +
+                '    <td>A/3 épület III. emelet</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Tanbánya  bemutató</td>\n' +
+                '    <td>A/3 épület, I. emelet.</td>\n' +
+                '    <td>17.00-21.00 félóránként</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Természeti és kulturális értékek Erdélyben</td>\n' +
+                '    <td>A3 épület III. emelet 314.</td>\n' +
+                '    <td>17.00-21.30 félóránként</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Zenélő háromfázisú motor</td>\n' +
+                '    <td>A3 épület II. emelet</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Napelemek test-közelből</td>\n' +
+                '    <td>A3 épület II. emelet</td>\n' +
+                '    <td>17.00-21.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Világítás mindörökké</td>\n' +
+                '    <td>A3 épület II. emelet</td>\n' +
+                '    <td>17.00-21.00</td>\n' +
                 '  </tr>\n' +
                 '</table>' +
                 '</div>',
@@ -165,7 +309,9 @@
         }
 
         // shorthand func
-        function byId(e) { return document.getElementById(e); }
+        function byId(e) {
+            return document.getElementById(e);
+        }
 
         // takes a string that contains coords eg - "227,307,261,309, 339,354, 328,371, 240,331"
         // draws a line from each co-ord pair to the next - assumes starting point needs to be repeated as ending point.
@@ -206,14 +352,14 @@
             return min ? (min > w ? min : w) : w;
         }
 
-        function myHover(element, x ,y, width, height, place) {
+        function myHover(element, x, y, width, height, place) {
             var hoveredElement = element;
             var coordStr = element.getAttribute('coords');
             var areaType = element.getAttribute('shape');
             $('.WTT').hide();
             const wtt = document.getElementsByClassName("WTT");  // Find the elements
-            for(let i = 0; i < wtt.length; i++) {
-                wtt[i].innerHTML=data[place];    // Change the content
+            for (let i = 0; i < wtt.length; i++) {
+                wtt[i].innerHTML = data[place];    // Change the content
             }
 
             $('.WTT').css({
@@ -281,10 +427,11 @@
     <style>
         .WTT {
             position: absolute;
-            background: rgb(18,156,225);
-            background: linear-gradient(90deg, rgba(18,156,225,0.836594012605042) 5%, rgba(18,142,225,0.7721682422969187) 29%, rgba(18,142,225,0.6461178221288515) 89%, rgba(0,204,255,0.2315519957983193) 100%);
+            background: rgb(18, 156, 225);
+            background: linear-gradient(90deg, rgba(18, 156, 225, 0.836594012605042) 5%, rgba(18, 142, 225, 0.7721682422969187) 29%, rgba(18, 142, 225, 0.6461178221288515) 89%, rgba(0, 204, 255, 0.2315519957983193) 100%);
             overflow: auto;
         }
+
         body {
             background-color: #f0f2f1;
         }
@@ -328,125 +475,128 @@
 
 <body onload='myInit()'>
 
+<canvas id='myCanvas'></canvas>
 
+<img src="joesvg.svg" width="100%" usemap='#imgmap_css_container_imgmap201293016112'
+     class='imgmap_css_container' alt='imgmap201293016112' id='img-imgmap201293016112'>
 
-    <canvas id='myCanvas'></canvas>
+<map name="imgmap_css_container_imgmap201293016112">
 
-    <center>
-        <img src="joesvg.svg" width="100%" usemap='#imgmap_css_container_imgmap201293016112'
-            class='imgmap_css_container' alt='imgmap201293016112' id='img-imgmap201293016112'>
+    <area onmouseover='myHover(this, 1296, 2000, 1000, 600, "Diszaula");' onmouseout='myLeave();' target="" alt="asdasd"
+          title="" href="#"
+          class="imgmap201293016112-area" id="imgmap201293016112-area-0"
+          coords="1296,1365,1538,1365,1536,1469,1294,1473" shape="poly">
 
-        <map name="imgmap_css_container_imgmap201293016112">
+    <area onmouseover='myHover(this, 2000, 1000, 1000, 600, "A/3");' onmouseout='myLeave();' target="" alt="asdasd"
+          title="" href="#"
+          class="imgmap201293016112-area" id="imgmap201293016112-area-1"
+          coords="1887,1052,1943,1012,1959,1036,2051,1036,2059,1092,2143,1148,2183,1124,2235,1076,2235,1048,2348,1036,2372,1072,2372,1136,2235,1205,2187,1245"
+          shape="poly">
 
-            <area onmouseover='myHover(this, 1296, 2000, 1000, 600, "Diszaula");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
-                class="imgmap201293016112-area" id="imgmap201293016112-area-0"
-                coords="1296,1365,1538,1365,1536,1469,1294,1473" shape="poly">
+    <area onmouseover='myHover(this, 1719, 1159, 1000, 600, "A/4");' onmouseout='myLeave();' target="" alt="" title="" href=""
+          coords="1951,1249,1831,1317,1727,1317,1723,1377,1635,1437,1627,1497,1699,1537,1719,1553,1839,1493,2103,1493,2107,1401,2031,1389,2027,1293"
+          class="imgmap201293016112-area" id="imgmap201293016112-area-3" shape="poly">
 
-            <area onmouseover='myHover(this, 2000, 1000, 1000, 600, "A/3");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
-                class="imgmap201293016112-area" id="imgmap201293016112-area-1" coords="1887,1052,1943,1012,1959,1036,2051,1036,2059,1092,2143,1148,2183,1124,2235,1076,2235,1048,2348,1036,2372,1072,2372,1136,2235,1205,2187,1245"
-                shape="poly">
+    <area  target="" alt="" title="" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "A/5");' onmouseout='myLeave();'
+           class="imgmap201293016112-area" id="imgmap201293016112-area-4"
+          coords="1771,1134,1947,1246,1879,1279,1803,1311,1787,1287,1767,1259,1735,1231,1715,1199,1715,1175" shape="poly">
 
-            <area onmouseover='myHover(this, 1400, 2400, 1000, 600, "A/4");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
-                class="imgmap201293016112-area" id="imgmap201293016112-area-2" coords="1881,3514,2410,3994"
-                shape="rect">
+</map>
 
-        </map>
-    </center>
+<div class="tooltip">Hover over me
+    <span class="tooltiptext">Tooltip text</span>
+</div>
 
-    <div class="tooltip">Hover over me
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
+<div id="tooltip">
+    asdqwe123
+</div>
+<div class="WTT">
+    <span>Tooltip text</span>
+</div>
+<div id="tt">
+    <span class="tooltiptext">Tooltip textHASJDGHJSADGJ</span>
+</div>
+<div id="LTT" class="LTT">
+    tooltipLin
+</div>
+<div id="MTT" class="MTT">
+    tooltipMac
+</div>
 
-    <div id="tooltip">
-        asdqwe123
-    </div>
-    <div class="WTT">
-        <span>Tooltip text</span>
-    </div>
-    <div id="tt">
-        <span class="tooltiptext">Tooltip textHASJDGHJSADGJ</span>
-    </div>
-    <div id="LTT" class="LTT">
-        tooltipLin
-    </div>
-    <div id="MTT" class="MTT">
-        tooltipMac
-    </div>
+<script type="text/javascript" src="./imageMapResizer.min.js"></script>
+<script type="text/javascript">
 
-    <script type="text/javascript" src="./imageMapResizer.min.js"></script>
-    <script type="text/javascript">
+    $('map').imageMapResize();
 
-        $('map').imageMapResize();
+</script>
 
-    </script>
+<script>
+    var tappedElement;
+    var actElement;
+    $('.WTT').css({
+        position: 'absolute'
+    }).hide()
+    $('area').each(function (i) {
+        // $('area').eq(i).bind('mouseenter', function (e) {
+        //     // console.log($('area').eq(i)[0].position())
+        //     console.log($('#imgmap201293016112-area-0').position())
+        //     if (!actElement) {
+        //         actElement = $('area').eq(i);
+        //         $('.WTT').eq(i).css({
+        //             top: e.pageY,
+        //             left: e.pageX
+        //         }).show()
+        //     }
+        //
+        // })
+        //
+        // $('area').eq(i).tap(function (e) {
+        //     tappedElement = $('area').eq(i);
+        //     const handler = () => {
+        //         $('.WTT,.LTT,.MTT').hide()
+        //     };
+        //     $(tappedElement).bind('tap', handler);
+        //     console.log(e)
+        //     $('.WTT,.LTT,.MTT').eq(i).css({
+        //         top: e.pageY,
+        //         left: e.pageX
+        //     }).show()
+        // })
+        //
+        //
+        // $('area').eq(i).bind('mouseleave', function (e) {
+        //     // actElement.hide();
+        //     actElement = null;
+        //     $('.WTT').hide()
+        // })
+    })
 
-    <script>
-        var tappedElement;
-        var actElement;
-        $('.WTT').css({
-            position: 'absolute'
-        }).hide()
-        $('area').each(function (i) {
-            // $('area').eq(i).bind('mouseenter', function (e) {
-            //     // console.log($('area').eq(i)[0].position())
-            //     console.log($('#imgmap201293016112-area-0').position())
-            //     if (!actElement) {
-            //         actElement = $('area').eq(i);
-            //         $('.WTT').eq(i).css({
-            //             top: e.pageY,
-            //             left: e.pageX
-            //         }).show()
-            //     }
-            //
-            // })
-            //
-            // $('area').eq(i).tap(function (e) {
-            //     tappedElement = $('area').eq(i);
-            //     const handler = () => {
-            //         $('.WTT,.LTT,.MTT').hide()
-            //     };
-            //     $(tappedElement).bind('tap', handler);
-            //     console.log(e)
-            //     $('.WTT,.LTT,.MTT').eq(i).css({
-            //         top: e.pageY,
-            //         left: e.pageX
-            //     }).show()
-            // })
-            //
-            //
-            // $('area').eq(i).bind('mouseleave', function (e) {
-            //     // actElement.hide();
-            //     actElement = null;
-            //     $('.WTT').hide()
-            // })
-        })
-
-        /*$('.WTT,.LTT,.MTT').css({
-           position: 'absolute'
-       }).hide()
-       $('area').each(function (i) {
-           $('area').eq(i).bind('mouseover', function (e) {
-               $('.WTT,.LTT,.MTT').eq(i).css({
-                   top: e.pageY,
-                   left: e.pageX
-               }).show()
-           })
-
-           $('area').eq(i).tap(function (e) {
-               console.log(e)
-               $('.WTT,.LTT,.MTT').eq(i).css({
-                   top: e.pageY,
-                   left: e.pageX
-               }).show()
-           })
-
-
-           $('area').eq(i).bind('mouseout', function () {
-               $('.WTT,.LTT,.MTT').stop().slideToggle();
-           })
+    /*$('.WTT,.LTT,.MTT').css({
+       position: 'absolute'
+   }).hide()
+   $('area').each(function (i) {
+       $('area').eq(i).bind('mouseover', function (e) {
+           $('.WTT,.LTT,.MTT').eq(i).css({
+               top: e.pageY,
+               left: e.pageX
+           }).show()
        })
-   */
-    </script>
+
+       $('area').eq(i).tap(function (e) {
+           console.log(e)
+           $('.WTT,.LTT,.MTT').eq(i).css({
+               top: e.pageY,
+               left: e.pageX
+           }).show()
+       })
+
+
+       $('area').eq(i).bind('mouseout', function () {
+           $('.WTT,.LTT,.MTT').stop().slideToggle();
+       })
+   })
+*/
+</script>
 
 </body>
 
