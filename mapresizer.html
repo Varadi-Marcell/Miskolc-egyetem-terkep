@@ -356,18 +356,30 @@
             var hoveredElement = element;
             var coordStr = element.getAttribute('coords');
             var areaType = element.getAttribute('shape');
-            $('.WTT').hide();
-            const wtt = document.getElementsByClassName("WTT");  // Find the elements
-            for (let i = 0; i < wtt.length; i++) {
-                wtt[i].innerHTML = data[place];    // Change the content
-            }
-
-            $('.WTT').css({
-                top: scaleY(y),
-                left: scaleX(x),
-                width: scaleX(width, 300),
-                height: scaleY(height, 200)
-            }).show()
+            // $('.WTT').hide();
+            // const wtt = document.getElementsByClassName("WTT");  // Find the elements
+            // for (let i = 0; i < wtt.length; i++) {
+            //     wtt[i].innerHTML = data[place];    // Change the content
+            // }
+            //
+            // $('.WTT').css({
+            //     top: scaleY(y),
+            //     left: scaleX(x),
+            //     width: scaleX(width, 300),
+            //     height: scaleY(height, 200)
+            // }).show()
+            document.getElementById('popupBasic').innerHTML = data[place];
+            // const wtt = document.getElementsByClassName("WTT");  // Find the elements
+            // for(let i = 0; i < wtt.length; i++) {
+            //     wtt[i].innerHTML=data[place];    // Change the content
+            // }
+            //
+            // $('.WTT').css({
+            //     top: scaleY(y),
+            //     left: scaleX(x),
+            //     width: scaleX(width, 300),
+            //     height: scaleY(height, 200)
+            // }).show()
             switch (areaType) {
                 case 'polygon':
                 case 'poly':
@@ -432,6 +444,11 @@
             overflow: auto;
         }
 
+        #popupBasic {
+            max-height: 400px;
+            overflow: auto;
+        }
+
         body {
             background-color: #f0f2f1;
         }
@@ -481,25 +498,35 @@
      class='imgmap_css_container' alt='imgmap201293016112' id='img-imgmap201293016112'>
 
 <map name="imgmap_css_container_imgmap201293016112">
-
+    <div data-role="popup" id="popupBasic">
+        <p>This is a completely basic popup, no options set.</p>
+    </div>
+    <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">
     <area onmouseover='myHover(this, 1296, 2000, 1000, 600, "Diszaula");' onmouseout='myLeave();' target="" alt="asdasd"
           title="" href="#"
           class="imgmap201293016112-area" id="imgmap201293016112-area-0"
           coords="1296,1365,1538,1365,1536,1469,1294,1473" shape="poly">
+    </a>
 
+    <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">
     <area onmouseover='myHover(this, 2000, 1000, 1000, 600, "A/3");' onmouseout='myLeave();' target="" alt="asdasd"
           title="" href="#"
           class="imgmap201293016112-area" id="imgmap201293016112-area-1"
           coords="1887,1052,1943,1012,1959,1036,2051,1036,2059,1092,2143,1148,2183,1124,2235,1076,2235,1048,2348,1036,2372,1072,2372,1136,2235,1205,2187,1245"
           shape="poly">
+    </a>
 
+    <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">
     <area onmouseover='myHover(this, 1719, 1159, 1000, 600, "A/4");' onmouseout='myLeave();' target="" alt="" title="" href=""
           coords="1951,1249,1831,1317,1727,1317,1723,1377,1635,1437,1627,1497,1699,1537,1719,1553,1839,1493,2103,1493,2107,1401,2031,1389,2027,1293"
           class="imgmap201293016112-area" id="imgmap201293016112-area-3" shape="poly">
+    </a>
 
+    <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">
     <area  target="" alt="" title="" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "A/5");' onmouseout='myLeave();'
            class="imgmap201293016112-area" id="imgmap201293016112-area-4"
           coords="1771,1134,1947,1246,1879,1279,1803,1311,1787,1287,1767,1259,1735,1231,1715,1199,1715,1175" shape="poly">
+    </a>
 
 </map>
 
