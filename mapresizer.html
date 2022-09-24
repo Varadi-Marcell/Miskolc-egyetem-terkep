@@ -6,18 +6,162 @@
     <script src="./jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
     <script>
 
-        // stores the device context of the canvas we use to draw the outlines
-        // initialized in myInit, used in myHover and myLeave
         var hdc;
         var element;
         var data = {
-            'A/3': '<div>\n    <span>Kezdés</span>\n    <span>befejezés</span>\n</div>\n<div>\n    <span>18:00</span>\n    <span>22:00</span>\n</div>',
             'A/4': '<div>\n    <span>Kezdés</span>\n    <span>befejezés</span>\n</div>\n<div>\n    <span>16:00</span>\n    <span>22:00</span>\n</div>',
-            'A/5': '<div>\n    <span>Kezdés</span>\n    <span>befejezés</span>\n</div>\n<div>\n    <span>14:00</span>\n    <span>22:00</span>\n</div>',
+            'A/3': '<div><table>\n' +
+                '  <tr>\n' +
+                '    <th>Ásványkiállítás</th>\n' +
+                '    <th>A/3 épület III. emelet</th>\n' +
+                '    <th>17.00-22.00</th>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Tanbánya  bemutató</td>\n' +
+                '    <td>Maria Anders</td>\n' +
+                '    <td>Germany</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Centro comercial Moctezuma</td>\n' +
+                '    <td>Francisco Chang</td>\n' +
+                '    <td>Mexico</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Ernst Handel</td>\n' +
+                '    <td>Roland Mendel</td>\n' +
+                '    <td>Austria</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Island Trading</td>\n' +
+                '    <td>Helen Bennett</td>\n' +
+                '    <td>UK</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Laughing Bacchus Winecellars</td>\n' +
+                '    <td>Yoshi Tannamuri</td>\n' +
+                '    <td>Canada</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Magazzini Alimentari Riuniti</td>\n' +
+                '    <td>Giovanni Rovelli</td>\n' +
+                '    <td>Italy</td>\n' +
+                '  </tr>\n' +
+                '</table>' +
+                '</div>',
+
+            'Diszaula': '<div>' +
+                '<table class="table table-responsive table-">\n' +
+                '  <tr>\n' +
+                '    <th>Előadás</th>\n' +
+                '    <th>Helyszín</th>\n' +
+                '    <th>Időpont</th>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Ásványsimogató</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Miből lesz a földtani cserebogár?</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Jó és rossz műanyag</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Larina? Tesla? Tik-tok? Tudomány!</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>AI Showroom</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>evosoft Hungary Kft. „a világ logikáját mi alakítjuk szoftverré”</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Lássuk a hőt!</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>18.30-21.30</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Megújuló energiák asztala</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>18.30-21.30</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Pörgess és nyerj!</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Teszteld a jogi tudásod! - fejtörő</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td> Ne válj áldozattá!</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-21.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Testünk titkai; Függőségeink</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Sebkészítés, sebkötözés. Újraélesztés.</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Babaszoba</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>  Általános izomerő vizsgálatok és egyensúlyi tesztek</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Gyógynövények az egészségturizmusban</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Együk magunkat egészségesre!</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Csontsűrűség mérése</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Csontsűrűség mérése</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '  <tr>\n' +
+                '    <td>Mit látsz a képen?</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>17.00-22.00</td>\n' +
+                '  </tr>\n' +
+                '</table></div>',
         }
 
         // shorthand func
@@ -137,8 +281,6 @@
     <style>
         .WTT {
             position: absolute;
-            /*width: 300px;*/
-            /*height: 200px;*/
             background: rgb(18,156,225);
             background: linear-gradient(90deg, rgba(18,156,225,0.836594012605042) 5%, rgba(18,142,225,0.7721682422969187) 29%, rgba(18,142,225,0.6461178221288515) 89%, rgba(0,204,255,0.2315519957983193) 100%);
             overflow: auto;
@@ -196,15 +338,15 @@
 
         <map name="imgmap_css_container_imgmap201293016112">
 
-            <area onmouseover='myHover(this, 1773, 813, 1000, 600, "A/5");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
+            <area onmouseover='myHover(this, 1296, 2000, 1000, 600, "Diszaula");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
                 class="imgmap201293016112-area" id="imgmap201293016112-area-0"
-                coords="1456,1234,1949,1010,2229,1182,1785,1486" shape="poly">
+                coords="1296,1365,1538,1365,1536,1469,1294,1473" shape="poly">
 
-            <area onmouseover='myHover(this, 2000, 1000, 1000, 600, "A/4");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
-                class="imgmap201293016112-area" id="imgmap201293016112-area-1" coords="2734,1727,3079,1354"
-                shape="rect">
+            <area onmouseover='myHover(this, 2000, 1000, 1000, 600, "A/3");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
+                class="imgmap201293016112-area" id="imgmap201293016112-area-1" coords="1887,1052,1943,1012,1959,1036,2051,1036,2059,1092,2143,1148,2183,1124,2235,1076,2235,1048,2348,1036,2372,1072,2372,1136,2235,1205,2187,1245"
+                shape="poly">
 
-            <area onmouseover='myHover(this, 1400, 2400, 1000, 600, "A/3");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
+            <area onmouseover='myHover(this, 1400, 2400, 1000, 600, "A/4");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
                 class="imgmap201293016112-area" id="imgmap201293016112-area-2" coords="1881,3514,2410,3994"
                 shape="rect">
 
