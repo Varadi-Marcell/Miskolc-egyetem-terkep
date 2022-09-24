@@ -3,7 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="./jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 
@@ -12,6 +13,12 @@
         // stores the device context of the canvas we use to draw the outlines
         // initialized in myInit, used in myHover and myLeave
         var hdc;
+        var element;
+        var data = {
+            'A/3': '<div>\n    <span>Kezdés</span>\n    <span>befejezés</span>\n</div>\n<div>\n    <span>18:00</span>\n    <span>22:00</span>\n</div>',
+            'A/4': '<div>\n    <span>Kezdés</span>\n    <span>befejezés</span>\n</div>\n<div>\n    <span>16:00</span>\n    <span>22:00</span>\n</div>',
+            'A/5': '<div>\n    <span>Kezdés</span>\n    <span>befejezés</span>\n</div>\n<div>\n    <span>14:00</span>\n    <span>22:00</span>\n</div>',
+        }
 
         // shorthand func
         function byId(e) { return document.getElementById(e); }
@@ -42,11 +49,32 @@
             hdc.strokeRect(left, top, right - left, bot - top);
         }
 
-        function myHover(element) {
+        function scaleX(x) {
+            var width = $(window).width() / 4533;
+            return x * width;
+        }
+
+        function scaleY(y) {
+            var height = $(window).height() / 5650;
+            return y * height;
+        }
+
+        function myHover(element, x ,y, width, height, place) {
             var hoveredElement = element;
             var coordStr = element.getAttribute('coords');
             var areaType = element.getAttribute('shape');
+            $('.WTT').hide();
+            const wtt = document.getElementsByClassName("WTT");  // Find the elements
+            for(let i = 0; i < wtt.length; i++) {
+                wtt[i].innerHTML=data[place];    // Change the content
+            }
 
+            $('.WTT').css({
+                top: scaleY(y),
+                left: scaleX(x),
+                width: scaleX(width),
+                height: scaleY(height)
+            }).show()
             switch (areaType) {
                 case 'polygon':
                 case 'poly':
@@ -104,6 +132,14 @@
     </script>
 
     <style>
+        .WTT {
+            position: absolute;
+            /*width: 300px;*/
+            /*height: 200px;*/
+            background: rgb(18,156,225);
+            background: linear-gradient(90deg, rgba(18,156,225,0.836594012605042) 5%, rgba(18,142,225,0.7721682422969187) 29%, rgba(18,142,225,0.6461178221288515) 89%, rgba(0,204,255,0.2315519957983193) 100%);
+            overflow: auto;
+        }
         body {
             background-color: #f0f2f1;
         }
@@ -157,16 +193,16 @@
 
         <map name="imgmap_css_container_imgmap201293016112">
 
-            <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
+            <area onmouseover='myHover(this, 1773, 813, 1000, 600, "A/5");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
                 class="imgmap201293016112-area" id="imgmap201293016112-area-0"
                 coords="1456,1234,1949,1010,2229,1182,1785,1486" shape="poly">
 
-            <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
-                class="imgmap201293016112-area" id="imgmap201293016112-area-0" coords="2734,1727,3079,1354"
+            <area onmouseover='myHover(this, 2000, 1000, 1000, 600, "A/4");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
+                class="imgmap201293016112-area" id="imgmap201293016112-area-1" coords="2734,1727,3079,1354"
                 shape="rect">
 
-            <area onmouseover='myHover(this);' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
-                class="imgmap201293016112-area" id="imgmap201293016112-area-0" coords="1881,3514,2410,3994"
+            <area onmouseover='myHover(this, 1400, 2400, 1000, 600, "A/3");' onmouseout='myLeave();' target="" alt="asdasd" title="" href="#"
+                class="imgmap201293016112-area" id="imgmap201293016112-area-2" coords="1881,3514,2410,3994"
                 shape="rect">
 
         </map>
@@ -176,8 +212,11 @@
         <span class="tooltiptext">Tooltip text</span>
     </div>
 
+    <div id="tooltip">
+        asdqwe123
+    </div>
     <div class="WTT">
-        <span class="tooltiptext">Tooltip text</span>
+        <span>Tooltip text</span>
     </div>
     <div id="tt">
         <span class="tooltiptext">Tooltip textHASJDGHJSADGJ</span>
@@ -189,7 +228,7 @@
         tooltipMac
     </div>
 
-    <script type="text/javascript" src="image-map-resizer-master/js/imageMapResizer.min.js"></script>
+    <script type="text/javascript" src="./imageMapResizer.min.js"></script>
     <script type="text/javascript">
 
         $('map').imageMapResize();
@@ -198,39 +237,43 @@
 
     <script>
         var tappedElement;
-        $('.WTT,.LTT,.MTT').css({
+        var actElement;
+        $('.WTT').css({
             position: 'absolute'
         }).hide()
         $('area').each(function (i) {
-            $('area').eq(i).bind('mouseenter', function (e) {
-                $('.WTT,.LTT,.MTT').eq(i).css({
-                    top: e.pageY,
-                    left: e.pageX
-                }).show()
-            })
-
-            $('area').eq(i).tap(function (e) {
-                tappedElement = $('area').eq(i);
-                const handler = () => {
-                    $('.WTT,.LTT,.MTT').hide()
-                };
-                $(tappedElement).bind('tap', handler);
-                console.log(e)
-                $('.WTT,.LTT,.MTT').eq(i).css({
-                    top: e.pageY,
-                    left: e.pageX
-                }).show()
-            })
-
-
-            $('area').eq(i).bind('mouseleave', function () {
-                $('.WTT,.LTT,.MTT').tooltip({
-                    position: {
-                        my: "center bottom-15",
-                        at: "center bottom"
-                    }
-                });
-            })
+            // $('area').eq(i).bind('mouseenter', function (e) {
+            //     // console.log($('area').eq(i)[0].position())
+            //     console.log($('#imgmap201293016112-area-0').position())
+            //     if (!actElement) {
+            //         actElement = $('area').eq(i);
+            //         $('.WTT').eq(i).css({
+            //             top: e.pageY,
+            //             left: e.pageX
+            //         }).show()
+            //     }
+            //
+            // })
+            //
+            // $('area').eq(i).tap(function (e) {
+            //     tappedElement = $('area').eq(i);
+            //     const handler = () => {
+            //         $('.WTT,.LTT,.MTT').hide()
+            //     };
+            //     $(tappedElement).bind('tap', handler);
+            //     console.log(e)
+            //     $('.WTT,.LTT,.MTT').eq(i).css({
+            //         top: e.pageY,
+            //         left: e.pageX
+            //     }).show()
+            // })
+            //
+            //
+            // $('area').eq(i).bind('mouseleave', function (e) {
+            //     // actElement.hide();
+            //     actElement = null;
+            //     $('.WTT').hide()
+            // })
         })
 
         /*$('.WTT,.LTT,.MTT').css({
