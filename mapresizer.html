@@ -49,14 +49,17 @@
             hdc.strokeRect(left, top, right - left, bot - top);
         }
 
-        function scaleX(x) {
+        function scaleX(x, min) {
             var width = $(window).width() / 4533;
-            return x * width;
+            const w = x * width;
+            return min ? (min > w ? min : w) : w;
         }
 
-        function scaleY(y) {
+        function scaleY(y, min) {
             var height = $(window).height() / 5650;
-            return y * height;
+            // return y * height;
+            const w = y * height;
+            return min ? (min > w ? min : w) : w;
         }
 
         function myHover(element, x ,y, width, height, place) {
@@ -72,8 +75,8 @@
             $('.WTT').css({
                 top: scaleY(y),
                 left: scaleX(x),
-                width: scaleX(width),
-                height: scaleY(height)
+                width: scaleX(width, 300),
+                height: scaleY(height, 200)
             }).show()
             switch (areaType) {
                 case 'polygon':
