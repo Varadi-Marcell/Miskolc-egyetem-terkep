@@ -864,10 +864,13 @@
             hdc = can.getContext('2d');
 
             // set the 'default' values for the colour/width of fill/stroke operations
+            hdc.fill ='red';
             hdc.fillStyle = 'red';
             hdc.strokeStyle = 'red';
             hdc.lineWidth = 2;
-            hdc.css({cursor: pointer})
+            hdc.css('cursor', 'pointer');
+            //hdc.attr("style", "cursor: pointer");
+
             //$("div.popup").attr("style", "display:block");
 
         }
@@ -959,7 +962,7 @@
         </div>
     </div>
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area onmouseover='myHover(this, 1296, 2000, 1000, 600, "Diszaula");' onmouseout='myLeave();' target="" alt="asdasd"
+    <area onmouseover='myHover(this, 1296, 2000, 1000, 600, "Diszaula");' onmouseout='myLeave();' target="_top" alt="asdasd"
           title="" href="#"
           class="imgmap201293016112-area" id="imgmap201293016112-area-0"
           coords="1291,1363,1546,1363,1540,1446,1610,1491,1616,1503,1610,1491,1553,1535,1502,1503,1463,1522,1400,1471,1291,1471" shape="poly">
@@ -967,7 +970,7 @@
 
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
     <area onmouseover='myHover(this, 2000, 1000, 1000, 600, "A/3");' onmouseout='myLeave();' target="" alt="asdasd"
-          title="" href="#"
+          title="" href="#" target="_top"
           class="imgmap201293016112-area" id="imgmap201293016112-area-1"
           coords="2373,1150,2368,1072,2349,1038,2232,1038,2232,1087,2174,1121,2149,1145,2057,1091,2057,1038,1954,1038,1941,1032,1896,1051,1890,1115,1960,1166,2011,1197,2088,1248,2183,1169,2183,1169,2183,1175,2285,1229,2285,1153"
           shape="poly">
