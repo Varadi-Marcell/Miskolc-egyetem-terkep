@@ -2,44 +2,289 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+
+    <style>
+        table {
+            width: 100%;
+
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+        }
+
+        table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+        }
+
+        table th,
+        table td {
+            padding: .625em;
+            text-align: center;
+        }
+
+        table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                /*
+                * aria-label has no advantage, it won't be read inside a table
+                content: attr(aria-label);
+                */
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+        /* general styling */
+        body {
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.25;
+        }
+    </style>
 </head>
 <body>
 
 <div>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
+    <table class=" table-striped table-responsive table-stripe">
+        <thead class="thead-dark">
+        <th>Előadás</th>
+        <th>Leírás</th>
+        <th>Helyszín</th>
+        <th>Időpont</th>
+        <th>Előadó</th>
+        <th>max létszám</th>
+
         </thead>
-        <tbody>
         <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>Passzold vissza Tesó! - kutatói szemmel</td>
+            <td>Elő a régi mobilokkal, zúzzuk be őket! De ha esetleg kötődsz a téglaméretű retro csodához, megnyugtatunk: a kegyelemdöfést követően kiöregedett készülékedet várja az újjászületés! Megmutatjuk, hogyan lehet újrahasznosítani értékes nyersanyagait, és miért fontos ez a mobilok újabb generációja szempontjából.
+                <br>Ne feledd: nem szemét, a jövő nyersanyaga!
+                <br>Hozd el a régi mobilodat, hogy új életre kelhessen!</td>
+            <td>A/4 főépület előcsarnok</td>
+            <td>17.00-22.00</td>
+            <td>nincs limit</td>
+            <td>Nagy Gáborné Ambrus Mária</td>
+
         </tr>
         <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <td>Az RM@Schools
+                nyersanyag-nagykövetei</td>
+            <td>Ismerd meg, hogyan lehet hatékonyan szétválogatni és újrahasznosítani a nyersanyagokat! Rengeteg energiaforrás rejtőzik még föld alatt és felett, a kérdés: készen állsz-e arra, hogy felfedezd?
+                Jelszó: Légy hatékonyabb, mint Hamupipőke!</td>
+            <td>A/4 főépület előcsarnok</td>
+            <td>17.00-22.00</td>
+            <td>Kurusta Tamás</td>
+            <td>nincs limit</td>
+
         </tr>
         <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <td>Rezgéssebesség mérés</td>
+            <td>A bányászati robbantások során a talajban keltett hullámok veszélyt jelenthetnek a környező létesítményekre. Az épületek megóvása érdekében a keletkező rezgések mértékét mérni szükséges. A mérések kivitelezésére használt eszköz bemutatása mellett az érdeklődők információt kaphatnak a bányszati robbantásokról.</td>
+            <td>A/4 főépület előcsarnok</td>
+            <td>17.00-22.00</td>
+            <td>Antonovits Ábel</td>
+            <td>-</td>
+
         </tr>
-        </tbody>
+        <tr>
+            <td>Formáld a földfelszínét és elemezd azt</td>
+            <td>Ismerd meg a felszín formakincsét a terepasztalaink és a térinformatika segítségével. Modellezd a több ezer éves folyamatokat néhány perc alatt és elemezd a felszínt térinformatikai eszközök segítségével. </td>
+            <td>A4 épület alagsor, 017 terem</td>
+            <td>17.00-22.00</td>
+            <td>Dr. Pecsmány Péter</td>
+            <td>15 fő</td>
+
+        </tr>
+        <tr>
+            <td>Villanyautó - füstmentesen 4 keréken</td>
+            <td> A Miskolci Egyetem Anyag és Vegyészmérnöki Karának hallgatói és oktatói által közösen átalakított elektromos jármű bemutatása egy kis meglepetéssel.</td>
+            <td>A/4 főbejárat előtt</td>
+            <td>17.00-22.00</td>
+            <td>Nagy Gábor</td>
+            <td>-</td>
+
+        </tr>
+        <tr>
+            <td>3D-s megjelenítés hagyományos és speciális eszközökkel</td>
+            <td>3D-s képek és modellek megjelenítésére alkalmas technológiák bemutatása</td>
+            <td>A4 épület III. emelet 321.</td>
+            <td>18.00-21.30 félóránként</td>
+            <td>Lajos Sándor</td>
+            <td>10fős csoportok</td>
+
+        </tr>
+        <tr>
+            <td>FIN & FUN</td>
+            <td>Kicsiknek: 18.00 - 19.30 | Pénzügyi játékok: pénzkirakó, pénzrajzolás, memóriajáték és más pénzzel kapcsolatos játékok, amelyeket akár a legkisebbek is kipróbálhatnak. A jutalom sem marad el :) </td>
+            <td>A/4. épület III. emelet</td>
+            <td>18.00-22.00</td>
+            <td>Dr. Füredi-Fülöp Judit</td>
+            <td>-</td>
+
+        </tr>
+        <tr>
+            <td>Mission (MÉG) Possible Kalandjáték! Mentsd meg a bolygót, hogy ne legyünk FÖLDÖN kívüliek!! </td>
+            <td>A játék célja, hogy ügyességi és logikai feladatokon keresztül megismerd, mit tehetsz bolygónk megóvásáért!</td>
+            <td>A/4 épület, régi Aula</td>
+            <td>18.00-22.00</td>
+            <td>Dr. Csiszár Csilla Margit</td>
+            <td>-</td>
+
+        </tr>
+        <tr>
+            <td>BEVÁLLAL(koz)ÓS Okospont</td>
+            <td>"EXTRÉM" GAZDASÁGI ACTIVITY: interaktív csapatjáték
+                LOGI-MIX: logikai fejtörők, gazdasági játékok nagyoknak, szórakoztató játékok kicsiknek.
+                VÁLLALKOZÓI TESZT - tudd meg, milyen vállalkozó lennél!</td>
+            <td>A/4 épület, régi Aula</td>
+            <td>18.00-22.00</td>
+            <td>Dr. Csiszár Csilla Margit</td>
+            <td>-</td>
+
+        </tr>
+        <tr>
+            <td>KVÍZelitó</td>
+            <td>Magyarország és a világ gazdasági és társadalmi jelenségeit a számok és a tények tükrében bemutató statisztikai ésközgazdasági kvízjátékok, melyek teszteli a résztvevők tájékozottságát, általános intelligenciáját.</td>
+            <td>A/4 épület, régi Aula</td>
+            <td>18.00-22.00</td>
+            <td>Egyénileg, vagy csapatokban induló játékosok is játszhatnak, akár több fordulót is.</td>
+            <td>Tóth Zoltán</td>
+
+        </tr>
+        <tr>
+            <td>Kor(lát) nélkül, avagy fejlesszük együtt kompetenciáinkat!</td>
+            <td>Minden életkorban más kompetencia szükséges az életben. Rendelkezünk kompetenciákkal és bizony korlátokkal is. Mi segítünk abban, hogy ezeket megismerjük és legyőzzük őket. Tudsz problémát megoldani? Kíváncsi vagy korlátaidra? </td>
+            <td>A/4 épület, régi Aula</td>
+            <td>18.00-22.00</td>
+            <td>Kucsma Daniella</td>
+            <td>-</td>
+
+        </tr>
+        <tr>
+            <td>WONDER WORLD</td>
+            <td>A játékosoknak kvízkérdésekre kell válaszolni. Egymás ellen versenyezve, dobókocka segítségével juthatnak el a pálya végére. </td>
+            <td>A/4 épület, régi Aula</td>
+            <td>18.00-22.00</td>
+            <td>Dr. Szendi Dóra</td>
+            <td>4 fő/kb.30 perc</td>
+
+        </tr>
+        <tr>
+            <td>Tutajjal át a másik partra</td>
+            <td>Egy meghatározott szabályrendszer segítségével át kell jutni a másik partra. A nyertes csapat tagjai ajándékot kapnak.</td>
+            <td>A/4 épület, régi Aula</td>
+            <td>18.00-22.00</td>
+            <td>Dr. Péter Zsolt</td>
+            <td>2 fő / kb. 10 perc</td>
+
+        </tr>
+        <tr>
+            <td>Térképes kvízjátékok</td>
+            <td>Interneten elérhető térképes kvíz (http://www.megajatek.hu)</td>
+            <td>A/4 épület, régi Aula</td>
+            <td>18.00-22.00</td>
+            <td>Dr. Kuttor Dániel</td>
+            <td>2fő/2 számítógép/15 perc</td>
+
+        </tr>
+        <tr>
+            <td>Légy Te is részese egy valódi marketing kísérletnek!</td>
+            <td>Egy különleges kísérletben való részvételre invitáljuk az érdeklődőket, ahol az öltözködéshez kapcsolódó sztereotípiákat vizsgáljuk a személyes marketing aspektusából.</td>
+            <td>A/4 épület, régi Aula</td>
+            <td>18.00-22.00</td>
+            <td>Dr. Molnár László</td>
+            <td>50 fő</td>
+
+        </tr>
+        <tr>
+            <td>Utazás a "világunk" körül</td>
+            <td>Interjú a "világ"utazókkal - ülj stúdióba, légy hírolvasó - járjuk be világunkat - itt és most - 80 mp alatt </td>
+            <td>A/4 épület, régi Aula</td>
+            <td>18.00-22.00</td>
+            <td>Juhász Annamária</td>
+            <td>-</td>
+
+        </tr>
+        <tr>
+            <td>Magyar Honvédség Radarállomás</td>
+            <td>Forgalmas légtér - A Magyar Honvédség radartechnikájának bemutatása</td>
+            <td>A/4 épület I. emeleti galéria</td>
+            <td>17.00-22.00</td>
+            <td>-</td>
+            <td>nincs limit</td>
+
+        </tr>
+        <tr>
+            <td>Magyar Honvédség Toborzóiroda</td>
+            <td>Ilyen a katonaélet - a Magyar Honvédség Miskolci Toborzó Irodájának bemutatója</td>
+            <td>A/4 épület I. emeleti galéria</td>
+            <td>17.00-22.00</td>
+            <td>-</td>
+            <td>nincs limit</td>
+
+        </tr>
+        <tr>
+            <td>Robert Bosch Power Tools Kft.</td>
+            <td></td>
+            <td>A/4 épület régi aula</td>
+            <td>17.00-22.00</td>
+            <td>-</td>
+            <td>nincs limit</td>
+
+        </tr>
     </table>
 </div>
 
 </body>
 </html>
-
-

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+
+    <style>
+        table {
+            width: 100%;
+
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+        }
+
+        table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+        }
+
+        table th,
+        table td {
+            padding: .625em;
+            text-align: center;
+        }
+
+        table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                /*
+                * aria-label has no advantage, it wont be read inside a table
+                content: attr(aria-label);
+                */
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+        /* general styling */
+        body {
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.25;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <table class=" table-striped table-responsive table-stripe">
+        <thead class="thead-dark">
+        <th>Előadás</th>
+        <th>Leírás</th>
+        <th>Helyszín</th>
+        <th>Időpont</th>
+        <th>Előadó</th>
+        <th>max létszám</th>
+        </thead>
+        <tr>
+            <td>Bányászat a sarki patikában - avagy ásványok a gyógyszeriparban</td>
+            <td>Ásványokkal mindenhol találkozunk a mindennapokban: a házunkban, a mobiltelefonunkban, az autónkban. Úgyanígy jelen vannak az ásványok a gyógyszereinkben, illetve a kórházakban. Ismerje meg őket Ön is!  </td>
+            <td> A/1 épület mfsz 1-2.</td>
+            <td>18.00-18.45</td>
+            <td>Leskó Máté</td>
+            <td>90 fő</td>
+
+        </tr>
+        <tr>
+            <td>Prototípusgyártók Öntevékeny Köre bemutatkozása</td>
+            <td>Kiállítás a hallgatói munkákból, tájékoztatás a diákkör tevékenységéről, egyszerű feladatok megoldásáért cserébe, elvihető kis emléktárgyakat (kulcstartó) adunk.</td>
+            <td>A1 épület magasföldszint, a XXXII. előadóhoz vezető átjáró</td>
+            <td>16:00-20:00</td>
+            <td>Dr. Bihari Zoltán</td>
+            <td>-</td>
+
+        </tr>
+        <tr>
+            <td>Kahoot (tematikus, angol) </td>
+            <td>Izgalmas, interaktív, angol nyelvű kvíz értékes nyereményekért!</td>
+            <td>A/1 épület fsz. 10.</td>
+            <td>18:00-21:00 óránként</td>
+            <td>Sári Patrik</td>
+            <td>40</td>
+
+        </tr>
+        <tr>
+            <td>Kahoot (tematikus, német)</td>
+            <td>Izgalmas, interaktív, német nyelvű kvíz értékes nyereményekért!</td>
+            <td>A/1 épület fsz. 10.</td>
+            <td>18:30-21:30 félóránként</td>
+            <td>Sári Patrik</td>
+            <td>40</td>
+
+        </tr>
+        <tr>
+            <td>Szóbeli Origó és Zöld út próbanyelvvizsga-Angol</td>
+            <td>Szóbeli Origo és Zöld Út (műszaki és gazdasági) próbanyelvvizsga angol nyelvből, előzetes regisztráció alapján. A vizsga értékelése után tanácsadás a további felkészüléshez.</td>
+            <td>A1 épület mfsz. 12.</td>
+            <td>18.00-19.00</td>
+            <td>Dorkó Dóra</td>
+            <td>10 fő</td>
+
+        </tr>
+        <tr>
+            <td>Szóbeli Origó és Zöld Út próbanyelvvizsga-NÉMET</td>
+            <td>Szóbeli Origó és Zöld Út (gazdasági) próbanyelvvizsga német nyelvből, előzetes regisztráció alapján. A vizsga értékelése után tanácsadás a további felkészüléshez.</td>
+            <td>A1 épület mfsz. 12.</td>
+            <td>18.00-19.00</td>
+            <td>Jungné Buzál Andrea</td>
+            <td>10 fő</td>
+
+        </tr>
+        <tr>
+            <td>Kultúrák találkozása: Frankofón országok</td>
+            <td>A francia nyelvű országok ismeretét játékosan tesztelő civilizációs kvíz csapatokban.</td>
+            <td>A1 épület mfsz. 13.</td>
+            <td>18.00-20.00</td>
+            <td>Kovács Boglárka</td>
+            <td>40 fő</td>
+
+        </tr>
+        <tr>
+            <td>Kultúrák találkozása: Angol nyelvű országok</td>
+            <td>Az angolszász országok kultúrájához kapcsolódó kiállítás, kvíz és vidám játékok</td>
+            <td>A1 épület mfsz. 13.</td>
+            <td>18.00-20.00</td>
+            <td>Dr. Bajzát Tünde</td>
+            <td>40 fő</td>
+
+        </tr>
+        <tr>
+            <td>Kultúrák találkozása: Magyarország</td>
+            <td>Magyarország kultúrájához kapcsolódó kiállítás és kvíz (nem csak) külföldieknek</td>
+            <td>A1 épület mfsz. 13.</td>
+            <td>18.00-20.00</td>
+            <td>Dobronyi Eszter</td>
+            <td>40 fő</td>
+
+        </tr>
+        <tr>
+            <td>Kultúrák találkozása: Német nyelvű országok</td>
+            <td>Német országismereti puzzle</td>
+            <td>A1 épület mfsz. 13.</td>
+            <td>18.00-20.00</td>
+            <td>Jungné Buzál Andrea</td>
+            <td>40 fő</td>
+
+        </tr>
+        <tr>
+            <td>JÉGTÖRŐ - Közösségépítő és party játékok</td>
+            <td>Olyan játékokat próbálhatsz ki és tanulhatsz meg nálunk, amelyek garantáltan jó hangulatot teremtenek bulikban, baráti társaságokban, családi körben egyaránt! Szórakoztató, hangulatoldó, közösségépítő játékaink mind-mind könnyen tanulhatóak és gyorsan lejátszhatóak. A boltban vásárolható társasjátékok mellett eszköz nélkül játszható játékokkal is megismerkedhetsz!</td>
+            <td>A/1 épület mfsz. 31-32.</td>
+            <td>17.00-22.00</td>
+            <td>dr. Juhász Orchidea, irodavezető</td>
+            <td>Egyszerre kb. 30 fő</td>
+
+        </tr>
+        <tr>
+            <td>Az egyetemi könyvtár a szingularitás küszöbén? Mesterséges intelligencia a színfalak mögött c. előadás </td>
+            <td>Egy év múlva átadásra kerül a Miskolci Egyetemen a Tudományos Adatelemző Módszertani Központ és Levéltári Nyílt Kutatási Adatforrástár. Jövőbeni tevékenységének alapját az egyetemi közgyűjtemények tudományos irodalma képezi. Ennek feldolgozása a mesterséges intelligenciára épülő, legmodernebb informatikai eljárások felhasználásával történik. Az előadás Ray Kurzweil A szingularitás küszöbén c. könyvének egy szövegelemző szoftver általi, valós idejű, tartalmi-formai vizsgálata segítségével mutatja be a módszer jelentőségét és felhasználási lehetőségeit.</td>
+            <td>A/1 épület 227. </td>
+            <td>17:00-19:00 óránként</td>
+            <td>Szendi Attila</td>
+            <td>30-50 fő</td>
+
+        </tr>
+        <tr>
+            <td>Bővített nyitva tartás az egyetemi könyvtárban</td>
+            <td>-</td>
+            <td>A/1. épület Galéria </td>
+            <td>8.00-20.00 </td>
+            <td>Szabóné Kovács Beáta</td>
+            <td>nincs limit</td>
+
+        </tr>
+        <tr>
+            <td>Kedvezményes beiratkozás az egyetemi könyvtárban</td>
+            <td>- az egyetemi polgároknak ingyenes beiratkozás (az éves regisztrációs díj 1000,- Ft, a féléves díj: 500,- Ft -- ez kerülne elengedésre) - a külső olvasók féláron iratkozhatnak be egy naptári évre (a teljes ár felnőtteknek 2500,- Ft; diákoknak és nyugdíjas</td>
+            <td>A/1. épület Galéria</td>
+            <td>8.00-20.00 </td>
+            <td>Szabóné Kovács Beáta</td>
+            <td>nincs limit</td>
+
+        </tr>
+        <tr>
+            <td>Az elengedés éjszakája</td>
+            <td>Késedelmi díjjal terhelt dokumentumok visszahozása esetén elengedjük a késedelmi díjat</td>
+            <td>A/1. épület Galéria </td>
+            <td>8.00-20.00 </td>
+            <td>Szabóné Kovács Beáta</td>
+            <td>nincs limit</td>
+
+        </tr>
+        <tr>
+            <td>Tea ceremónia</td>
+            <td>Szeretettel várjuk a teák kedvelőit! Hagyományos kínai teák gazdag választékát ismerhetik és kóstolhatják meg a vendégek, a klasszikus kínai teaceremónia kíséretében.</td>
+            <td>A/1 épület, I. emelet 119.</td>
+            <td>18.30-19.00</td>
+            <td>-</td>
+            <td>12</td>
+
+        </tr>
+        <tr>
+            <td>Kínai nyelvi demó óra (Konfuciusz)</td>
+            <td>Bemutatkozó óráinkon a résztvevők megismerkedhetnek Konfuciusz, a híres kínai tanítómester és bölcs életével és tanaival, az október elsején esedékes kínai nemzeti ünneppel, valamint belekóstolhatnak a kínai nyelvoktatásba. Várunk minden érdeklődőt!</td>
+            <td>A/1 épület, I. emelet 117.</td>
+            <td>19.00-19.30</td>
+            <td>-</td>
+            <td>12</td>
+
+        </tr>
+        <tr>
+            <td>Kínai kvíz & játék</td>
+            <td>A jelentkezők játékos és érdekes kvízkérdésekkel tesztelhetik Kínával kapcsolatos ismereteiket, ajándékok, nyereménytárgyak reményében. Gyere, és játssz velünk!</td>
+            <td>A/1 épület, I. emelet 119.</td>
+            <td>19.30-20.00</td>
+            <td>-</td>
+            <td>12</td>
+
+        </tr>
+        <tr>
+            <td>Kínai nyelvi demó óra</td>
+            <td>Bemutatkozó óráinkon a résztvevők megismerkedhetnek Konfuciusz, a híres kínai tanítómester és bölcs életével és tanaival, az október elsején esedékes kínai nemzeti ünneppel, valamint belekóstolhatnak a kínai nyelvoktatásba. Várunk minden érdeklődőt!</td>
+            <td>A/1 épület, I. emelet 117.</td>
+            <td>20.00-20.30</td>
+            <td>-</td>
+            <td>12</td>
+
+        </tr>
+        <tr>
+            <td>Kínai kvíz & játék</td>
+            <td>A jelentkezők játékos és érdekes kvízkérdésekkel tesztelhetik Kínával kapcsolatos ismereteiket, ajándékok, nyereménytárgyak reményében. Gyere, és játssz velünk!</td>
+            <td>A/1 épület, I. emelet 119.</td>
+            <td>20.30-21.00</td>
+            <td>-</td>
+            <td>12</td>
+
+        </tr>
+        <tr>
+            <td>Kínai nyelvi demó óra (Karakterek)</td>
+            <td>Bemutatkozó óráinkon a résztvevők megismerkedhetnek Konfuciusz, a híres kínai tanítómester és bölcs életével és tanaival, az október elsején esedékes kínai nemzeti ünneppel, valamint belekóstolhatnak a kínai nyelvoktatásba. Várunk minden érdeklődőt!</td>
+            <td>A/1 épület, I. emelet 117.</td>
+            <td>21.15-21.45</td>
+            <td>-</td>
+            <td>12</td>
+
+        </tr>
+        <tr>
+            <td>Születésnapi ünnepség (tortával, zenével, énekléssel)</td>
+            <td>Intézetünk 9. születésnapját ünnepeljük közösségben. Zenés, énekes köszöntés mellett az ünnepi torta elfogyasztása. Légy vendégünk, és ünnepeld velünk az intézet születésnapját!</td>
+            <td>A/1 épület, I. emelet folyosó</td>
+            <td>21.00-21.15</td>
+            <td>-</td>
+            <td>12</td>
+
+        </tr>
+        <tr>
+            <td>Tea ceremónia</td>
+            <td>Szeretettel várjuk a teák kedvelőit! Hagyományos kínai teák gazdag választékát ismerhetik és kóstolhatják meg a vendégek, a klasszikus kínai teaceremónia kíséretében.</td>
+            <td>A/1 épület, I. emelet 119.</td>
+            <td>21.45-22.00</td>
+            <td>-</td>
+            <td>12</td>
+
+        </tr>
+        <tr>
+            <td>Prototípusgyártók Öntevékeny Köre bemutatkozása</td>
+            <td></td>
+            <td>A1 épület magasföldszint, a XXXII. előadóhoz vezető átjáró.</td>
+            <td>16:00-20:00</td>
+            <td>Dr. Bihari Zoltán</td>
+            <td>-</td>
+        </tr>
+
+    </table>
+    </table>
+</div>
+
+</body>
+</html>

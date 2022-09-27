@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+
+    <style>
+        table {
+            width: 100%;
+
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+        }
+
+        table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+        }
+
+        table th,
+        table td {
+            padding: .625em;
+            text-align: center;
+        }
+
+        table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                /*
+                * aria-label has no advantage, it wont be read inside a table
+                content: attr(aria-label);
+                */
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+        /* general styling */
+        body {
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.25;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <table class=" table-striped table-responsive table-stripe">
+        <thead class="thead-dark">
+        <th>Előadás</th>
+        <th>Leírás</th>
+        <th>Helyszín</th>
+        <th>Időpont</th>
+        <th>Előadó</th>
+        <th>max létszám</th>
+        </thead>
+        <tr>
+            <td>Ásványok a világ minden tájáról! Ásványkiállítás</td>
+            <td>Ásványokkal mindenhol találkozunk a mindennapokban: a házunkban, a mobiltelefonunkban, az autónkban. Úgyanígy jelen vannak az ásványok a gyógyszereinkben, illetve a kórházakban. Ismerje meg őket Ön is! </td>
+            <td>A/3 épület III. emelet</td>
+            <td>17.00-22.00</td>
+            <td>Móricz Ferenc </td>
+            <td>nincs limit</td>
+
+        </tr>
+        <tr>
+            <td>Kalandok a mélyben- tanbánya bemutató</td>
+            <td>Gyere velünk a mélybe! Egy titokzatos, sötét helyre, ahová csak a bátrak mernek belépni... és persze a kíváncsiak. A tanbányánk az egyik legkülönlegesebb hely az egyetemen, ahol betekinthetsz a bányászok rejtett, kihívásokkal teli világába.  Az egykori bányákból származó eszközök segítségével mutatjuk be a bányászathoz kötődő kitermelési technológiákat, de lesznek bányász sztorik is és talán fellebbentjük a mélység titkát is ...     </td>
+            <td>A/3 épület, I. emelet.</td>
+            <td>17.00-21.00 félóránként</td>
+            <td>Dr. Havasi István - Szilvási Marcell</td>
+            <td>15 fő</td>
+        </tr>
+        <tr>
+            <td>Rejtőzködő értékek nyomában- Természeti és kulturális értékek Erdélyben</td>
+            <td>Erdély: legendák, sorsok, kincsek, természetben megbúvó igazságok. Hangulatok és képek két évtized tanulmányútjairól, amelyeken feltárult Erdély leírhatatlanul gazdag öröksége.</td>
+            <td>A3 épület III. emelet 314.</td>
+            <td>17.00-21.30 félóránként</td>
+            <td>Dr. habil. Elekes Tibor</td>
+            <td>25 fő</td>
+
+        </tr>
+        <tr>
+            <td>Zenélő háromfázisú motor</td>
+            <td>A villamos forgógépeket szinte bárhol megtaláljuk a környezetünkben, még ha észre sem vesszük őket. A hangjukat viszont sokszor halljuk, a felhasználás módjától függ, hogy milyen hangfrekvenciákat bocsátanak ki. Ha frekvenciaváltóról vannak táplálva, akkor lehetőség nyílik zene lejátszása a motoron, miközben forog?! Igen!</td>
+            <td>A3 épület II. emelet</td>
+            <td>17.00-22.00</td>
+            <td>Boros Rafael Ruben</td>
+            <td>12 fő/csoport</td>
+
+        </tr>
+        <tr>
+            <td>Napelemek test-közelből</td>
+            <td>A napelemes rendszerek felgyorsult ütemű terjedése egyre jobban igényli a napelemek és napelemes rendszerek működésének és felépítésének ismeretét. Az érdeklődők testközelből ismerhetik meg a különböző típusú és méretű napelemeket, valamint láthatnak üzemelés során sérült, villámcsapott és tönkrement napelemeket is.</td>
+            <td>A3 épület II. emelet</td>
+            <td>17.00-21.00</td>
+            <td>Dr. Bodnár István</td>
+            <td>-</td>
+
+        </tr>
+        <tr>
+            <td>Világítás mindörökké</td>
+            <td>Manapság egyre több autógyártó szakít a hagyományos halogén izzós világítóberendezésektől, az autókban előre és hátra is LED-es, vagy egyéb megoldásokat használnak. Néhány alapvető fényszóró típus kerül most bemutatásra, mondhatni végig követhetjük az elektromos gépjármű világítás fejlődését.</td>
+            <td>A3 épület II. emelet</td>
+            <td>17.00-21.00</td>
+            <td>Erdősy Dániel</td>
+            <td>-</td>
+
+        </tr>
+    </table>
+    </table>
+</div>
+
+</body>
+</html>

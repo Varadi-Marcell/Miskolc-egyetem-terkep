@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+
+    <style>
+        table {
+            width: 100%;
+
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+        }
+
+        table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+        }
+
+        table th,
+        table td {
+            padding: .625em;
+            text-align: center;
+        }
+
+        table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                /*
+                * aria-label has no advantage, it wont be read inside a table
+                content: attr(aria-label);
+                */
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+        /* general styling */
+        body {
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.25;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table class=" table-striped table-responsive table-stripe">
+        <thead class="thead-dark">
+        <th>Előadás</th>
+        <th>Leírás</th>
+        <th>Helyszín</th>
+        <th>Időpont</th>
+        <th>Előadó</th>
+        <th>max létszám</th>
+        </thead>
+        <tr>
+            <td>Látványos mechatronikai berendezések</td>
+            <td>A program keretén belül a tanszéken lehetőség lesz szemügyre venni az érdekesebbnél érdekesebb mechatronikai megoldásokat, úgy, mint egy kábelrobotot, demonstrációs célokat szolgáló robotkart, illetve több, mikrovezérlővel felvértezett mérnöki megoldást. Ezen felül a látogatók megismerhetik az érzékelők-, és a sűrített levegővel működtetett berendezések rejtelmeit is. Továbbá egy komplex mechatronikai összeszerelő egység is várja majd az érdeklődőket, amely a gépészet, elektronika és informatika területeit ötvözi.</td>
+            <td>A/5 épület III. emelet</td>
+            <td>18:00-20:30 félóránként</td>
+            <td>Dr. Rónai László</td>
+            <td>15 fő/csoport</td>
+        </tr>
+        <tr>
+            <td>Logisztikai high-tech eszközök bemutatása</td>
+            <td>Logisztikai intézetben található high-tech laboratóriumban lévő eszközök bemutatása (felrakó és komissiózó rendszer).</td>
+            <td>A/5 épület I. emelet 103-104. terem</td>
+            <td>18.30-20.30 félóránként</td>
+            <td>Cservenák Ákos</td>
+            <td>15 fő/csoport</td>
+
+        </tr>
+        <tr>
+            <td>Virtuális valóság és az automatizálás kihívásai</td>
+            <td>Az interaktív 3D kivetítőt mutatjuk be az érdeklődőknek és egy automata targoncát és az azon lévő Mitsubishi robotot.</td>
+            <td>A/5 épület I. emelet 113 terem</td>
+            <td>18.30-20.30 félóránként</td>
+            <td>Nagy Gábor</td>
+            <td>15 fő/csoport</td>
+
+        </tr>
+        <tr>
+            <td>KLÍMA. Hangulatjelentés az ATTI-tól</td>
+            <td>Az ATTI programjának központi eleme - különös tekintettel a nyári, közösen elszenvedett aszályra és ezzel a klímaváltozás igazán kézzelfoghatóvá válására csaknem mindenki számára - a klíma, melynek szimbolikus jelentésére is építünk programunk során.
+                Az este folyamán egyrészt a klíma éghajlati vonatkozásai jelennek meg, illetve azoknak társadalomra gyakorolt hatásai és társadalmi összefüggései, valamint tágabban: társadalmi klíma, közeg, hangulat, amelyet teremtünk és teremtenek körénk. Van, amit befolyásolhatunk és van, amit jobbára elszenvedünk.
+              <br>  Program részletesen:
+                <br>  • 17.00-17:10: Warming Up! Szabó-Tóth Kinga bevezető gondolatai
+                <br>  • 17:15-17.30: Társadalmi hangulat és hangulatzavar. Csepeli György szociálpszichológiai előadása
+                <br> • 17.30-18.30: Kerekasztal beszélgetés "Száraz zivatar” címmel, a klímaváltozás társadalmi, gazdasági, politikai, migrációs és geopolitikai  hatásairól.
+                <br> Moderátor: Fekete Sándor. Tagok: Fazekas Csaba történész, Havasi Virág szociológus, Udvarvölgyi Zsolt nemzetközi kapcsolatok szakértő és Zárug Péter politológus
+                <br> • 18.30-18:45: Irodalmi hangulatjelentés Osváth Andreával
+                <br> • 18:45-19.00: Szociális hangulatjelentés: aktuális dilemmák és megoldáskeresés a szociális munkában. Bányai Emőke és Kozma Judit gondolatai
+                <br> • 19.00-19:15: Mihályi Helga: Társadalmi klíma. Jelentés Miskolcról és a térségről
+                <br> • 19:15-19.30: Klíma határon innen és túl – a hazai és határon túli kisebbségek helyzete. Papp Z. Attila elemzése
+                <br> • 20.00-21.00 : Hangulatzene – fergeteg (esőhozó) buli Nádaski Attilával!
+
+            </td>
+            <td>A/5 épület II. emelet</td>
+            <td>17.00-21.00</td>
+            <td>Dr. habil. Szabó-Tóth Kinga</td>
+            <td>100 fő</td>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>

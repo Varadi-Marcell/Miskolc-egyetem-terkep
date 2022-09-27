@@ -18,8 +18,8 @@
         var data = {
 
             'C/2':'<div>' +
-            '<table class=" table-striped table-responsive table-stripe">\n' +
-                    '<thead class="thead-dark">\n'+
+                '<table class=" table-striped table-responsive table-stripe">\n' +
+                '<thead class="thead-dark">\n'+
                 '<th>Előadás</th>\n' +
                 '<th>Helyszín</th>\n' +
                 '<th>Időpont</th>\n' +
@@ -458,11 +458,11 @@
                 '</table></div>',
 
             'A/5':'<div><table class=" table-striped table-responsive table-stripe">\n' +
-                  '<thead class="thead-dark">\n'+
-                  '<th>Előadás</th>\n' +
-                  '<th>Helyszín</th>\n' +
-                 '<th>Időpont</th>\n' +
-                 '</thead>\n'+
+                '<thead class="thead-dark">\n'+
+                '<th>Előadás</th>\n' +
+                '<th>Helyszín</th>\n' +
+                '<th>Időpont</th>\n' +
+                '</thead>\n'+
                 '  <tr>\n' +
                 '    <td>Látványos mechatronikai berendezések</td>\n' +
                 '    <td>A/5 épület III. emelet</td>\n' +
@@ -592,11 +592,11 @@
                 '</div>',
 
             'A/3': '<div><table class=" table-striped table-responsive table-stripe">\n' +
-        '<thead class="thead-dark">\n'+
-        '    <th>Előadás</th>\n' +
-        '    <th>Helyszín</th>\n' +
-        '    <th>Időpont</th>\n' +
-        '</thead>\n'+
+                '<thead class="thead-dark">\n'+
+                '    <th>Előadás</th>\n' +
+                '    <th>Helyszín</th>\n' +
+                '    <th>Időpont</th>\n' +
+                '</thead>\n'+
                 '  <tr>\n' +
                 '    <td>Ásványkiállítás</td>\n' +
                 '    <td>A/3 épület III. emelet</td>\n' +
@@ -637,6 +637,11 @@
                 '    <th>Helyszín</th>\n' +
                 '    <th>Időpont</th>\n' +
                 '</thead>\n'+
+                '  <tr>\n' +
+                '    <td>Best of Geszti</td>\n' +
+                '    <td>Díszaula</td>\n' +
+                '    <td>21:00</td>\n' +
+                '  </tr>\n' +
                 '  <tr>\n' +
                 '    <td>Ásványsimogató</td>\n' +
                 '    <td>Díszaula</td>\n' +
@@ -732,11 +737,7 @@
                 '    <td>Díszaula</td>\n' +
                 '    <td>17.00-22.00</td>\n' +
                 '  </tr>\n' +
-                '  <tr>\n' +
-                '    <td>Best of Geszti</td>\n' +
-                '    <td>Díszaula</td>\n' +
-                '    <td>21:00</td>\n' +
-                '  </tr>\n' +
+
                 '</table></div>',
         }
 
@@ -788,34 +789,12 @@
             var hoveredElement = element;
             var coordStr = element.getAttribute('coords');
             var areaType = element.getAttribute('shape');
-            // $('.WTT').hide();
-            // const wtt = document.getElementsByClassName("WTT");  // Find the elements
-            // for (let i = 0; i < wtt.length; i++) {
-            //     wtt[i].innerHTML = data[place];    // Change the content
-            // }
-            //
-            // $('.WTT').css({
-            //     top: scaleY(y),
-            //     left: scaleX(x),
-            //     width: scaleX(width, 300),
-            //     height: scaleY(height, 200)
-            // }).show()
-           // console.log(place);
+
             document.getElementById('content').innerHTML = data[place];
             document.getElementById('contentHeader').innerHTML = place;
             document.getElementById('details').href = place + ".html";
             console.log(document.getElementById('details').href);
-            // const wtt = document.getElementsByClassName("WTT");  // Find the elements
-            // for(let i = 0; i < wtt.length; i++) {
-            //     wtt[i].innerHTML=data[place];    // Change the content
-            // }
-            //
-            // $('.WTT').css({
-            //     top: scaleY(y),
-            //     left: scaleX(x),
-            //     width: scaleX(width, 300),
-            //     height: scaleY(height, 200)
-            // }).show()
+
             switch (areaType) {
                 case 'polygon':
                 case 'poly':
@@ -835,7 +814,6 @@
         function myInit() {
             // get the target image
             var img = byId('img-imgmap201293016112');
-
             var x, y, w, h;
 
             // get it's position and width+height
@@ -868,7 +846,8 @@
             hdc.fillStyle = 'red';
             hdc.strokeStyle = 'red';
             hdc.lineWidth = 2;
-            hdc.css('cursor', 'pointer');
+
+            //$(hdc).css('cursor', 'pointer');
             //hdc.attr("style", "cursor: pointer");
 
             //$("div.popup").attr("style", "display:block");
@@ -903,29 +882,6 @@
             position: absolute;
         }
 
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            border-bottom: 1px dotted black;
-        }
-
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: black;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-            /* Position the tooltip */
-            position: absolute;
-            z-index: 1;
-        }
-
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-        }
-
         .table-striped>tbody>tr:nth-child(odd)>td,
         .table-striped>tbody>tr:nth-child(odd)>th {
             background-color: #3C3B3B;
@@ -957,91 +913,91 @@
         <div role="main" class="ui-content">
             <div id="content"></div>
 
-        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Bezárás</a>
-        <a id="details" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" >Részletek</a>
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Bezárás</a>
+            <a id="details" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" >Részletek</a>
         </div>
     </div>
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area onmouseover='myHover(this, 1296, 2000, 1000, 600, "Diszaula");' onmouseout='myLeave();' target="_top" alt="asdasd"
-          title="" href="#"
-          class="imgmap201293016112-area" id="imgmap201293016112-area-0"
-          coords="1291,1363,1546,1363,1540,1446,1610,1491,1616,1503,1610,1491,1553,1535,1502,1503,1463,1522,1400,1471,1291,1471" shape="poly">
+        <area onmouseover='myHover(this, 1296, 2000, 1000, 600, "Diszaula");' onmouseout='myLeave();' target="_top" alt="asdasd"
+              title="" href="#"
+              class="imgmap201293016112-area" id="imgmap201293016112-area-0"
+              coords="1291,1363,1546,1363,1540,1446,1610,1491,1616,1503,1610,1491,1553,1535,1502,1503,1463,1522,1400,1471,1291,1471" shape="poly">
     </a>
 
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area onmouseover='myHover(this, 2000, 1000, 1000, 600, "A/3");' onmouseout='myLeave();' target="" alt="asdasd"
-          title="" href="#" target="_top"
-          class="imgmap201293016112-area" id="imgmap201293016112-area-1"
-          coords="2373,1150,2368,1072,2349,1038,2232,1038,2232,1087,2174,1121,2149,1145,2057,1091,2057,1038,1954,1038,1941,1032,1896,1051,1890,1115,1960,1166,2011,1197,2088,1248,2183,1169,2183,1169,2183,1175,2285,1229,2285,1153"
-          shape="poly">
+        <area onmouseover='myHover(this, 2000, 1000, 1000, 600, "A/3");' onmouseout='myLeave();' target="" alt="asdasd"
+              title="" href="#" target="_top"
+              class="imgmap201293016112-area" id="imgmap201293016112-area-1"
+              coords="2373,1150,2368,1072,2349,1038,2232,1038,2232,1087,2174,1121,2149,1145,2057,1091,2057,1038,1954,1038,1941,1032,1896,1051,1890,1115,1960,1166,2011,1197,2088,1248,2183,1169,2183,1169,2183,1175,2285,1229,2285,1153"
+              shape="poly">
     </a>
 
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area onmouseover='myHover(this, 1719, 1159, 1000, 600, "A4");' onmouseout='myLeave();' target="" alt="" title="" href=""
-          coords="1835,1496,2107,1496,2107,1392,2019,1396,2031,1388,2019,1396,2027,1299,1955,1247,1819,1315,1723,1315,1723,1376,1627,1428,1631,1488,1683,1513,1723,1548"
-          class="imgmap201293016112-area" id="imgmap201293016112-area-3" shape="poly">
+        <area onmouseover='myHover(this, 1719, 1159, 1000, 600, "A4");' onmouseout='myLeave();' target="" alt="" title="" href=""
+              coords="1835,1496,2107,1496,2107,1392,2019,1396,2031,1388,2019,1396,2027,1299,1955,1247,1819,1315,1723,1315,1723,1376,1627,1428,1631,1488,1683,1513,1723,1548"
+              class="imgmap201293016112-area" id="imgmap201293016112-area-3" shape="poly">
     </a>
 
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area  target="" alt="" title="" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "A/5");' onmouseout='myLeave();'
-           class="imgmap201293016112-area" id="imgmap201293016112-area-4"
-          coords="1771,1134,1947,1246,1879,1279,1803,1311,1787,1287,1767,1259,1735,1231,1715,1199,1715,1175" shape="poly">
+        <area  target="" alt="" title="" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "A/5");' onmouseout='myLeave();'
+               class="imgmap201293016112-area" id="imgmap201293016112-area-4"
+               coords="1771,1134,1947,1246,1879,1279,1803,1311,1787,1287,1767,1259,1735,1231,1715,1199,1715,1175" shape="poly">
     </a>
 
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
        class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area target="" alt="A/2" title="A/2" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "A/2");' onmouseout='myLeave();'
-          class="imgmap201293016112-area" id="imgmap201293016112-area-5"
-          coords="2676,1466,2748,1466,2744,1486,2756,1474,2921,1390,2921,1338,2848,1294,2732,1354,2700,1350,2692,1374,2612,1422" shape="poly">
+        <area target="" alt="A/2" title="A/2" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "A/2");' onmouseout='myLeave();'
+              class="imgmap201293016112-area" id="imgmap201293016112-area-5"
+              coords="2676,1466,2748,1466,2744,1486,2756,1474,2921,1390,2921,1338,2848,1294,2732,1354,2700,1350,2692,1374,2612,1422" shape="poly">
     </a>
 
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
        class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area target="" alt="A/1" title="A/1" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "A/1");' onmouseout='myLeave();'
-          class="imgmap201293016112-area" id="imgmap201293016112-area-6"
-          coords="2668,1629,2724,1601,2941,1597,2945,1549,2740,1545,2740,1473,2676,1465,2524,1373,2560,1345,2556,1293,2516,1265,2724,1261,2724,1153,2288,1149,2284,1225,2187,1173,2091,1249,2123,1269,2123,1305,2384,1457,2368,1489,2348,1493,2348,1545,2432,1609,2480,1625,2528,1597,2604,1593" shape="poly">
+        <area target="" alt="A/1" title="A/1" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "A/1");' onmouseout='myLeave();'
+              class="imgmap201293016112-area" id="imgmap201293016112-area-6"
+              coords="2668,1629,2724,1601,2941,1597,2945,1549,2740,1545,2740,1473,2676,1465,2524,1373,2560,1345,2556,1293,2516,1265,2724,1261,2724,1153,2288,1149,2284,1225,2187,1173,2091,1249,2123,1269,2123,1305,2384,1457,2368,1489,2348,1493,2348,1545,2432,1609,2480,1625,2528,1597,2604,1593" shape="poly">
     </a>
 
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
        class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area target="" alt="Infóépület" title="Infóépület" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "Infóépület");' onmouseout='myLeave();'
-          coords="2820,1293,2957,1217,2957,1161,2860,1104,3109,1096,3109,984,2668,984,2668,1096,2860,1104,2860,1104,2736,1177,2732,1237" shape="poly">
+        <area target="" alt="Infóépület" title="Infóépület" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "Infóépület");' onmouseout='myLeave();'
+              coords="2820,1293,2957,1217,2957,1161,2860,1104,3109,1096,3109,984,2668,984,2668,1096,2860,1104,2860,1104,2736,1177,2732,1237" shape="poly">
     </a>
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
        class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area target="" alt="C/1" title="C/1" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "C/1");' onmouseout='myLeave();'
-          class="imgmap201293016112-area" id="imgmap201293016112-area-7"
-          coords="1450,1628,1454,1556,1470,1520,1398,1468,1298,1472,1294,1428,1262,1436,1258,1516,1318,1556,1318,1588,1386,1588" shape="poly">
-    </a>
-
-    <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
-       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area target="" alt="B/1" title="B/1" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "B/1");' onmouseout='myLeave();'
-          class="imgmap201293016112-area" id="imgmap201293016112-area-8"
-          coords="1606,1727,1643,1711,1671,1711,1671,1635,1651,1599,1498,1502,1450,1526,1450,1631,1554,1707,1554,1687,1582,1711" shape="poly">
+        <area target="" alt="C/1" title="C/1" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "C/1");' onmouseout='myLeave();'
+              class="imgmap201293016112-area" id="imgmap201293016112-area-7"
+              coords="1450,1628,1454,1556,1470,1520,1398,1468,1298,1472,1294,1428,1262,1436,1258,1516,1318,1556,1318,1588,1386,1588" shape="poly">
     </a>
 
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
        class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area target="" alt="A/6" title="A/6" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "A/6");' onmouseout='myLeave();'
-          class="imgmap201293016112-area" id="imgmap201293016112-area-9"
-          coords="1374,1364,1478,1307,1442,1299,1446,1227,1562,1227,1562,1259,1695,1191,1719,1203,1735,1227,1763,1255,1783,1283,1783,1311,1723,1315,1715,1356,1554,1440,1538,1428,1534,1372"
-          shape="poly">
+        <area target="" alt="B/1" title="B/1" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "B/1");' onmouseout='myLeave();'
+              class="imgmap201293016112-area" id="imgmap201293016112-area-8"
+              coords="1606,1727,1643,1711,1671,1711,1671,1635,1651,1599,1498,1502,1450,1526,1450,1631,1554,1707,1554,1687,1582,1711" shape="poly">
     </a>
 
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
        class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area target="" alt="C/2" title="C/2" href=""
-          onmouseover='myHover(this, 1663,1034, 1000, 600, "C/2");' onmouseout='myLeave();'
-          class="imgmap201293016112-area" id="imgmap201293016112-area-10"
-          coords="1018,1872,1346,1688,1350,1620,1154,1512,817,1700,817,1764" shape="poly">
+        <area target="" alt="A/6" title="A/6" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "A/6");' onmouseout='myLeave();'
+              class="imgmap201293016112-area" id="imgmap201293016112-area-9"
+              coords="1374,1364,1478,1307,1442,1299,1446,1227,1562,1227,1562,1259,1695,1191,1719,1203,1735,1227,1763,1255,1783,1283,1783,1311,1723,1315,1715,1356,1554,1440,1538,1428,1534,1372"
+              shape="poly">
     </a>
 
     <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
        class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
-    <area target="" alt="B/3 B/4" title="B/3 B/4" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "B/3-B/4");' onmouseout='myLeave();'
-          class="imgmap201293016112-area" id="imgmap201293016112-area-11"
-          coords="144,2372,553,2776" shape="rect">
+        <area target="" alt="C/2" title="C/2" href=""
+              onmouseover='myHover(this, 1663,1034, 1000, 600, "C/2");' onmouseout='myLeave();'
+              class="imgmap201293016112-area" id="imgmap201293016112-area-10"
+              coords="1018,1872,1346,1688,1350,1620,1154,1512,817,1700,817,1764" shape="poly">
+    </a>
+
+    <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
+       class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b hiddenLink">
+        <area target="" alt="B/3 B/4" title="B/3 B/4" href="" onmouseover='myHover(this, 1663,1034, 1000, 600, "B/3-B/4");' onmouseout='myLeave();'
+              class="imgmap201293016112-area" id="imgmap201293016112-area-11"
+              coords="144,2372,553,2776" shape="rect">
     </a>
 
 </map>
@@ -1058,6 +1014,7 @@
     var actElement;
     $('.WTT').css({
         position: 'absolute'
+
     }).hide()
     $('area').each(function (i) {
 
