@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+
+    <style>
+        table {
+            width: 100%;
+
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            table-layout: fixed;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+        }
+
+        table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+        }
+
+        table th,
+        table td {
+            padding: .625em;
+            text-align: center;
+        }
+
+        table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                /*
+                * aria-label has no advantage, it wont be read inside a table
+                content: attr(aria-label);
+                */
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+        /* general styling */
+        body {
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.25;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <table class="   table-responsive table-stripe">
+        <thead class="thead-dark">
+        <th>Előadás</th>
+        <th>Leírás</th>
+        <th>Helyszín</th>
+        <th>Időpont</th>
+        <th>Előadó</th>
+        <th>max létszám</th>
+        </thead>
+        <tr>
+            <td>Terítéken a Miskolci Egyetem tortája</td>
+            <td>Töltsünk együtt egy feledhetetlen estét a Kutatók Éjszakáján! És hogy senki ne maradjon éhesen, a díszudvarba meghívtuk a több gasztro-díjjal elismert Anyukám mondta éttermet. Kikísérletezett, titkos receptjük alapján készült pizzákat hoznak. A gasztroudvarban kapható lesz a Miskolci Egyetem ’Tanév Íze’ tortája is, amibe először a 2022/2023-as tanévnyitón „vágtunk bele”.</td>
+            <td>Díszudvar</td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td>Fények a homlokzaton</td>
+            <td>Nézni, látni, átélni – a Kutatók Éjszakáján több mint száz programot kínál a Miskolci Egyetem nyolc kara. A tudományos színteret pedig fényfestés teszi még színesebbé. Fényeskedő homlokzatokkal várjuk sötétedéstől a főbejáratnál és a díszudvarban!</td>
+            <td>Főbejárat, Díszudvar</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>A büntetőeljárás árnyékában</td>
+            <td>Az érdeklődők bepillantást kaphatnak a nyomozás rejtelmeibe a Borsod-Abaúj-Zemplén Megyei Rendőrfőkapitányság közreműködésével</td>
+            <td>Főbejárat előtti parkoló (Bűnügyi technikai autó)</td>
+            <td>17.00-22.00</td>
+            <td>Dr. Jacsó Judit /  Prof. Dr. Nagy Anita / Dr. Mátyás Imre</td>
+            <td>5 fő/alkalom</td>
+
+        </tr>
+        <tr>
+            <td>Mályi Madármentő Állomás</td>
+            <td>MTE Mályi Madármentő Állomás munkájának való megismerése, Erdei fülesbagollyal való találkozás, játékos madárkvíz</td>
+            <td>Főbejárat - üveg előcsarnok</td>
+            <td>17.00-21.00</td>
+            <td>-</td>
+            <td>nincs limit</td>
+        </tr>
+        <tr>
+            <td>ERASMUS pult</td>
+            <td>ERASMUS ösztöndíjlehetőségekről tájékoztatás játékos vetélkedőkkel</td>
+            <td>Főbejárat - üveg előcsarnok</td>
+            <td>17.00-22.00</td>
+            <td>-</td>
+            <td>nincs limit</td>
+        </tr>
+    </table>
+    </table>
+    </table>
+</div>
+
+</body>
+</html>
