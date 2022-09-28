@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+
+    <style>
+        table {
+            width: 100%;
+
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            table-layout: fixed;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+        }
+
+        table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+        }
+
+        table th,
+        table td {
+            padding: .625em;
+            text-align: center;
+        }
+
+        table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                /*
+                * aria-label has no advantage, it wont be read inside a table
+                content: attr(aria-label);
+                */
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+        /* general styling */
+        body {
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.25;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <table class="   table-responsive table-stripe">
+        <thead class="thead-dark">
+        <th>Előadás</th>
+        <th>Leírás</th>
+        <th>Helyszín</th>
+        <th>Időpont</th>
+        <th>Előadó</th>
+        <th>max létszám</th>
+        </thead>
+        <tr>
+            <td>Érmenyomás</td>
+            <td>Válassz egy mintát és készíts saját érmét pillanatok alatt! </td>
+
+            <td>C/1 épület I. emelet </td>
+            <td>17.00-22.00</td>
+            <td>Puskás Csaba Sándor</td>
+            <td>-</td>
+
+        </tr>
+        <tr>
+            <td>Kunt Gergely előadása:  Gaudiopolisz - egy budapesti árvaház története</td>
+            <td>Az előadás a második világháború alatti embermentést mutatja be, különös tekinettek Sztehlo Gáborra valamint  a Nemzetközi Vöröskeresztre. Valamint bemutatja a háborős árvák számára létrehozott árvaházat, Gaudiopoliszt.</td>
+            <td>C1 épület II. emelet, 202A.</td>
+            <td>20.00</td>
+            <td>Dr. Kunt Gergely</td>
+            <td>15 fő</td>
+
+        </tr>
+        <tr>
+            <td>Sorban állni</td>
+            <td>Tömegek Tarr Béla filmejiben. A narratíva, a kamera viszonyulása a tömegekhez, ennek stilisztikai velejárói. A tömegek kiszolgáltatottsága, manipulálhatósága, hangoltsága, esendősége. A tömegek megjelenítésének néhány módjaa filmtörténetben.</td>
+
+            <td>C1 épület II. emelet, 201. terem</td>
+            <td>18.30-20.00 között, 25 percenként</td>
+            <td>Dr. Bognár László</td>
+            <td>12 fő/alkalom</td>
+
+        </tr>
+        <tr>
+            <td>Logikai táblajátékok bemutatása és tanítása</td>
+            <td>A fogalalkozás célja a legnépszerűbb táblajátékok  megismerése, amelyek kitűnően alkalmazhatóak, elsősorban a matematika oktatásban. </td>
+
+            <td>C/1 épület III. emelet, folyosó</td>
+            <td>17.00-20.00</td>
+            <td>Dr. habil. K. Nagy Emese</td>
+            <td>16 fő</td>
+
+        </tr>
+        <tr>
+            <td>Firkából mesehős -- írd meg a saját történetedet!
+                (Kreatív művészetpedagógiai foglalkozás)</td>
+            <td>A feledat lényege, hogy a résztvevők szabadon firkálhatnak. Három lépcsőben, eleinte irányítottan, végezetül teljesen önállóan, a saját firkájukban kell keresniük egy fiktív figurát.
+                Alkosd meg szabadon egy egyszerű firkából a saját mesehősödet, dolgozd ki a karaktert, és írj róla egy mesét.
+                Csak látszólag egyszerű! Ugyanakkor felszabadító! :)</td>
+
+            <td>C/1 épület III. emelet folyosó</td>
+            <td>17.00-20.00</td>
+            <td>Dr. Kapusi Angéla</td>
+            <td>10 fő</td>
+
+        </tr>
+        <tr>
+            <td>Milyen színű a tanulók értékelése?</td>
+            <td>Interaktív előadás a színek szerepéről a tanulók iskolai értékelésében</td>
+
+            <td>C/1 épület III. emelet 305.</td>
+            <td>18.00-18.40</td>
+            <td>Kovácsné dr. Duró Andrea</td>
+            <td>16 fő</td>
+
+        </tr>
+        <tr>
+            <td> Fejlődj játékosan! (játékpedagógia)</td>
+            <td>Játékpedagógiai hagyományok felelevenítése három játékon keresztül. Olyan tevékenységeket kínálunk, amelyek hozzájárulnak a személyiség mélyebb kibontakoztatásához;  mindenki számára biztosíthatják  a figyelem, koncentráció, emlékezet fejlesztését és megtapasztalhatják a kooperáció pozitív hatásait is. Gyere, játssz velünk!</td>
+
+            <td>C/1 épület III. emelet</td>
+            <td>17.30-20.00</td>
+            <td>Dr. Egri Tímea                                  Dr. Simon Zoltán                             Jaskóné Dr. Gácsi Mária</td>
+            <td>kisebb csoportokban, szimultán 4-5 fő</td>
+
+        </tr>
+        <tr>
+            <td>Participatív kutatás a felsőoktatásban</td>
+            <td>Az interakítv workshop célja, hogy az érdeklődök bevonásával, illetve értelmi sérült (participatív) kutatótársak közreműködésével kutatási programot állítsunk össze. További cél annak érzékeltetése, hogy mi a különbség az önálló és a participatív kutatás között.</td>
+
+            <td>C/1 épület III. emelet</td>
+            <td>17.00-20.00</td>
+            <td>Dr. Horváth Péter László</td>
+            <td>12 fő</td>
+
+        </tr>
+        <tr>
+            <td>Szenvedélyek rabságában</td>
+            <td>A szenvedélybetegségekhez tartozó területek bemutatása, a függőség megelőzésének lehetőségei, a segítségnyújtás formái, lehetőség egyéni tanácsadásra</td>
+
+            <td>C/1 épület III. emelet 307. </td>
+            <td>17.00-22.00</td>
+            <td>Bozsikné Vig Marianna</td>
+            <td>nincsen, folyamatos megkeresésre számítunk</td>
+
+        </tr>
+        <tr>
+            <td>Ismerd meg önmagad! </td>
+            <td>A program során olyan érdekes önimsereti és különböző képességeket mérő tesztek és kérdőívek segítségével ismerkedhetnek meg a résztvevők, amelyek segítséget nyújtanak az önmagunkról alkotott tudásunk elmélyítésében. </td>
+
+            <td>C/1 épület III. emelet</td>
+            <td>17.00-20.00</td>
+            <td>Dr. Egri Tímea, Gráf Rózsa </td>
+            <td>folyamatos látogatás biztosítása a program alatt</td>
+
+        </tr>
+        <tr>
+            <td>Euroexam-nyelvvizsga angol nyelvből (B2/C1) -- szövegértés-rész </td>
+            <td>Gyere és tedd próbára angoltudásod közép- vagy felsőfokon az Euroexam-nyelvvizsgával!</td>
+
+            <td>C/1 épület III. emelet 307/A.</td>
+            <td>18:00-21:00 óránként</td>
+            <td>Sári Patrik</td>
+            <td>30</td>
+
+        </tr>
+        <tr>
+            <td>ÖSD-nyelvvizsga német nyelvből (B2/C1) -- szövegértés-rész </td>
+            <td>Gyere és tedd próbára némettudásod közép- vagy felsőfokon az ÖSD-nyelvvizsgával!</td>
+
+            <td>C/1 épület III. emelet 307/A.</td>
+            <td>18:00-21:00 óránként</td>
+            <td>Sári Patrik</td>
+            <td>30</td>
+
+        </tr>
+        <tr>
+            <td>Kincskeresés</td>
+            <td>Légy Te a legjobb magándetektív! Fedezd fel játékosan a Miskolci Egyetemet!</td>
+
+            <td>Indulás a C/1 épület III. emelet, 307. előtti folyosórésztől</td>
+            <td>18:00-21:00 óránként</td>
+            <td>Sári Patrik</td>
+            <td>40</td>
+
+        </tr>
+        <tr>
+            <td>Eszkimó inukshuk építése</td>
+            <td>Az inuksukok nagy, kövekből emelt, toronyszerű vagy emberalakú építmények, amelyeket a sarkvidéki őslakosok használnak. Ezeket próbáljuk meg kicsiben, kavicsokból, fatalpazaton összeállítani. Minden építő hazaviheti a saját inukshukját. </td>
+
+            <td>C/1 épület III. emelet folyosó</td>
+            <td>17.00-21.00</td>
+            <td>Dr. R. Nagy József</td>
+            <td>30 fő</td>
+
+        </tr>
+        <tr>
+            <td>Kutyából lesz szalonna</td>
+            <td>Vietnám, a kultúrában, hagyományokban gazdag és sokrétű közösséggel rendelkező ország, amelyhez hasonlóval ritkán találkozik az ember. Gyakran ellenszenvvel emlegetik, és legtöbbünk csak történelmünk negatív időszakához köti ezt az országot. Szeretnénk megmutatni, mi teszi ezt az országot olyan egyedivé, és remélhetőleg megtanítjuk másoknak, hogy kultúrájukban több is van, mint egy szörnyű háborúhoz kapcsolódó negatív konnotációk.</td>
+
+            <td>C/1 épület III. emelet 309.</td>
+            <td>19:00</td>
+            <td>Ugrai Franciska</td>
+            <td>20 fő</td>
+
+        </tr>
+        <tr>
+            <td>ANTROPOS figura, emlékőr készítés</td>
+            <td>Készítsünk ANTROPOS figurát! Az anthropos jelentése „ember”, a logos pedig a „gondolat” vagy „ész”. Az antropológusok az emberi társadalmakkal foglalkoznak, kutatást végeznek társadalmi szokásokról, viselkedésről, vallásról, a technika és ember kapcsolatáról a világ sokszínű népeinek életéről. Gyere, beszélgessünk az emberről és közben készítsünk egy figurát, amelyet emlékőrként haza is vihetsz!</td>
+
+            <td>C/1 épület III. emelet</td>
+            <td>17.00-21.00</td>
+            <td>Dr. Dobák Judit</td>
+            <td>100 fő</td>
+
+        </tr>
+    </table>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+
+    <style>
+        table {
+            width: 100%;
+
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+        }
+
+        table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+        }
+
+        table th,
+        table td {
+            padding: .625em;
+            text-align: center;
+        }
+
+        table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                /*
+                * aria-label has no advantage, it wont be read inside a table
+                content: attr(aria-label);
+                */
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+        /* general styling */
+        body {
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.25;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <table class="   table-responsive table-stripe">
+        <thead class="thead-dark">
+        <th>Előadás</th>
+        <th>Leírás</th>
+        <th>Helyszín</th>
+        <th>Időpont</th>
+        <th>Előadó</th>
+        <th>max létszám</th>
+        </thead>
+        <tr>
+            <td>Digitális (S)iker</td>
+            <td>A Digitális iker technológia felhasználásával megelevenedik előttünk egy logisztikai raktár, ahol egy vezető nélküli targonca működését szabályozhatjuk.</td>
+            <td>Informatikai Intézet, I. emelet 114.</td>
+            <td>18:00-20:15 45 percenként</td>
+            <td>Dr. Baksáné Dr. Varga Erika</td>
+            <td>nincs limit</td>
+
+        </tr>
+        <tr>
+            <td>Az intelligens adatelemzés rejtelmei</td>
+            <td>Az intelligens rendszereink adatokat gyűjtenek mindennapjainkról, ezen adatok elemzése alapján hozzák meg döntési lépéseiket. A bemutatóban megismerheted az adatok begyűjtését, adatok tárolását és a feldolgozás lépéseit. Megismerheted az egyszerűbb agy-hullám mérő berendezés működését is.</td>
+            <td>Informatikai Intézet, I. emelet 112.</td>
+            <td>18:00-20:15 45 percenként</td>
+            <td>Dr. Kovács László</td>
+            <td>nincs limit</td>
+
+        </tr>
+        <tr>
+            <td>Lego Mindstorms EV3 robotok programozása</td>
+            <td>Ha érdekelnek a robotok és szeretnéd kipróbálni a programozásukat, vegyél részt ebben a kihívásban! </td>
+            <td>Informatikai Intézet, I. emelet 103.</td>
+            <td>17:00-19:00 óránként</td>
+            <td>Tompa Tamás</td>
+            <td>nincs limit</td>
+
+        </tr>
+        <tr>
+            <td>Logiscool - Grafikus programozás gyerekeknek</td>
+            <td>Szeretnéd elkészíteni saját játékprogramodat? Itt a helyed! A program elkészítése grafikus komponens-alapú webes környezetben történik, nincs szükség programozási nyelv ismeretére.</td>
+            <td>Informatikai Intézet, I. emelet 101.</td>
+            <td>19.00-20.00</td>
+            <td>Dr. Veres Zsolt</td>
+            <td>20 fős/csoport</td>
+
+        </tr>
+        <tr>
+            <td>VR ablak a Bay Zoltán Kutatóintézetre</td>
+            <td>A Miskolci Egyetemről a virtuális valóság (VR) technológia  segítségével bekukkanthatsz a Bay Zoltán Kutatóintézet laborjaiban folyó munkába.</td>
+            <td>Informatikai Intézet, I. emelet 102.</td>
+            <td>17.00-22.00</td>
+            <td>Árvai László</td>
+            <td>nincs limit</td>
+
+        </tr>
+        <tr>
+            <td>Tervezz, szimulálj, automatizálj!</td>
+            <td>A látogatók megismerkedhetnek a klasszikus és robot alapú gyártásautomatizálással és folyamatautomatizálással. Bemutatunk különböző tervező, szimulációs és programozó szoftvereket.</td>
+            <td>Informatika Épület, földszinti előtér és laborok</td>
+            <td>17.00-22.00</td>
+            <td>Dr. Trohák Attila</td>
+            <td>nincs limit</td>
+
+        </tr>
+        <tr>
+            <td>Így tanítsd a robotod, drónod!!</td>
+            <td>Építettél egy robotot vagy van egy Dji Tello drónod és szeretnél többet kihozni belőle? Hogyan hajtson végre valamilyen feladatot? Segíts a robotnak! Írj le egyszerű mozgásokat, magyarázd el, hogy megértse! Félsz, hogy nem megy? Segítünk benne.</td>
+            <td>Informatika Épület, II. emeleti előtér</td>
+            <td>17.00-21.00 óránként</td>
+            <td>Bartók Roland</td>
+            <td>15-20 fős/csoport</td>
+
+        </tr>
+        <tr>
+    </table>
+    </table>
+</div>
+
+</body>
+</html>

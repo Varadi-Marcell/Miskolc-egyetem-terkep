@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+
+    <style>
+        table {
+            width: 100%;
+
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            table-layout: fixed;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+        }
+
+        table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+        }
+
+        table th,
+        table td {
+            padding: .625em;
+            text-align: center;
+        }
+
+        table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                /*
+                * aria-label has no advantage, it wont be read inside a table
+                content: attr(aria-label);
+                */
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+        /* general styling */
+        body {
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.25;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <table class="   table-responsive table-stripe">
+        <thead class="thead-dark">
+        <th>Előadás</th>
+        <th>Leírás</th>
+        <th>Helyszín</th>
+        <th>Időpont</th>
+        <th>Előadó</th>
+        <th>max létszám</th>
+        </thead>
+
+        <tr>
+            <td>Tudtad-e? Több poliuretán vesz körbe mint gondolnád! </td>
+            <td>Poliuretán Laboratórium bemutatása a Felsőoktatási és Ipari Együttműködési Központban (FIEK)</td>
+            <td>C/2 műhelycsarnok, déli oldal, 4. hajó, földszint</td>
+            <td>18:00-19:30 félóránként</td>
+            <td>Hornyák-Mester Enikő</td>
+            <td>max. 15 fő / turnus</td>
+
+        </tr>
+        <tr>
+            <td>Nyomtassunk 3D-ben mindent (is)!</td>
+            <td>Fém és polimer huzalok 3D nyomtatása</td>
+
+            <td> C/2 műhelycsarnok 5. hajó, földszint - Öntészeti Intézet Laboratóriuma</td>
+            <td>18:00-21:00 óránként</td>
+            <td>Hornyák-Mester Enikő</td>
+            <td>max. 15 fő / turnus</td>
+
+        </tr>
+        <tr>
+            <td>Mini téglagyártás</td>
+            <td>Kisméretű tégla extrúziója. Megmutatjuk hogyan lehet "sárból" házat építeni.</td>
+            <td>C/2 műhelycsarnok, 5. hajó</td>
+            <td>17.30, 19.30</td>
+            <td>Géber Róbert</td>
+            <td>Max. 10 fő/csoport </td>
+
+        </tr>
+        <tr>
+            <td>Fémtechnológia - ettől az agyad is beolvad!</td>
+            <td>Látványcsapolástól a késztermék hengerlésig, avagy így készül a fémolvadékból késztermék</td>
+
+            <td>C/2 műhelycsarnok 5. hajó, földszint (Öntészeti Intézet Laboratóriuma) </td>
+            <td>18.00-19.30</td>
+            <td>Dr. Szabó Gábor</td>
+            <td>max. 15 fő / turnus</td>
+
+        </tr>
+        <tr>
+            <td>Szobrászkodás CNC szerszámgépeken</td>
+            <td>Az érdeklődők ízelítőt kaphatnak a CNC gépek használatából, melyeket az ipar számos területén használnak. A látogatók gyárthatnak egy sakkfigurát maguknak, melyet igény szerint el is vihetnek magukkal.</td>
+
+            <td>C/2 műhelycsarnok, északi oldal 3. hajó (Szerszámgépészeti és Mechatronikai Intézet CNC laboratóriuma)</td>
+            <td>19.00-22.00 <br>20-30 percenként</td>
+            <td>Kiss Dániel
+                Dr. Hegedűs György</td>
+            <td>10 fő/csoport</td>
+
+        </tr>
+        <tr>
+            <td>A számítógépes tervezéstől a CNC gyártásig</td>
+            <td>Az iparban a gépeket és alkatrészeit ma a leggyakrabban modern szoftverekkel tervezik meg és CNC gépeken készítik el, amikkel a gyártás sokkal egyszerűbb és gyorsabb. A bemutató során egy alkatrész gyártásának tervezését és kivitelezését lehet megtekinteni.</td>
+
+            <td>C2 Műhelycsarnok 3.hajó déli oldal (FIEK főbejáraton keresztül)</td>
+            <td>17.30-20.00 félóránként</td>
+            <td>Makkai Tamás</td>
+            <td>8 fő/csoport</td>
+
+        </tr>
+        <tr>
+            <td>Hogyan repül a repülő? </td>
+            <td>Lézersíkkal és olajköddel láthatóvá tett áramlások szélcsatornában,áramlásmérő eszközök bemutatása.</td>
+
+            <td>C2 Műhelycsarnok 2. hajó, észak (Áramlás- és Hőtechnikai Gépek Intézeti Tanszék laboratóriuma)</td>
+            <td>19.00-21.30 félóránként</td>
+            <td>Dr. Bencs Péter</td>
+            <td>10 fő/csoport</td>
+
+        </tr>
+        <tr>
+            <td>Fékterem motorteszt</td>
+            <td>Belsőégésű motor tesztmérése, a korszerű motorok főbb szerkezeti elemei és azok szerepének bemutatása.</td>
+
+            <td>C2 Műhelycsarnok 2. hajó, észak (Áramlás- és Hőtechnikai Gépek Intézeti Tanszék laboratóriuma)</td>
+            <td>19.00-21.30 félóránként</td>
+            <td>Tollár Sándor</td>
+            <td>10 fő/csoport</td>
+
+        </tr>
+
+        <tr>
+            <td>Rezgés a mindennapokban</td>
+            <td>Rezgésmérések alkalmazása a műszaki diagnosztika világában</td>
+
+            <td>C2 Műhelycsarnok 2. hajó, észak (Áramlás- és Hőtechnikai Gépek Intézeti Tanszék laboratóriuma)</td>
+            <td>19.00-21.30 félóránként</td>
+            <td>Bozzay Péter</td>
+            <td>10 fő/csoport</td>
+
+        </tr>
+        <tr>
+            <td>Bűnös vagy ártatlan?</td>
+            <td>interaktív büntetőeljárás (regisztráció az ÁJK kari standnál)</td>
+
+            <td>C/2 Műhelycsarnok - Mintatárgyaló</td>
+            <td>17.15; 18.45</td>
+            <td>Dr. Udvarhelyi Bence / Prof. Dr. Nagy Anita</td>
+            <td>30 fő/alkalom</td>
+
+        </tr>
+    </table>
+    </table>
+</div>
+
+</body>
+</html>
